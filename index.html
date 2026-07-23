@@ -178,9 +178,8 @@
   /* figures */
   figure { margin: 1.7rem 0; }
   figure img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
-  figure.portrait img { max-width: 21rem; margin-left: auto; margin-right: auto; }
-  figcaption { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-top: 0.55rem; }
-  .banner { margin: 0 0 2.6rem; }
+  figure.portrait img { max-width: 16rem; margin-left: auto; margin-right: auto; }
+  figcaption { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-top: 0.55rem; text-align: center; }
 
   @media (max-width: 860px) {
     .shell { grid-template-columns: 1fr; gap: 2.6rem; padding-top: 2.5rem; }
@@ -228,11 +227,6 @@
 
   <main class="main">
 
-    <figure class="banner">
-      <img src="assets/daejeon_diurnal_rhythm.png" loading="lazy" alt="Departure and arrival counts by time of day for the Daejeon 2021 travel survey, with clear morning and evening peaks">
-      <figcaption>Daejeon 2021 household travel survey: the daily rhythm of departures and arrivals. Reproducing this pattern, and proving a generated schedule respects it, is what my models are built to do.</figcaption>
-    </figure>
-
     <section id="about">
       <h2>About</h2>
       <p class="lead">I study large language models in the pipelines that produce official travel
@@ -251,9 +245,13 @@
         <li><span class="n">961 → 42</span><span class="l">studies screened into an evidence-scored map of AI travel models</span></li>
         <li><span class="n">32–37%</span><span class="l">how often LLM "repairs" restore the known true value, despite passing automated checks</span></li>
       </ul>
+      <figure>
+        <img src="assets/daejeon_temporal_rhythm.png" loading="lazy" alt="Smooth kernel-density curves of activity start times by trip purpose for Daejeon 2021, with home, work, and school peaks">
+        <figcaption>When a city travels: activity start times by purpose (Daejeon 2021). The daily rhythm my models learn to reproduce and are audited against.</figcaption>
+      </figure>
       <figure class="portrait">
         <img src="assets/daejeon_desire_lines.png" loading="lazy" alt="Map of Daejeon showing desire lines between traffic zones, with major flows concentrated around the Yuseong, Seo, and Jung districts">
-        <figcaption>Desire lines across Daejeon's traffic zones (trips ≥ 5): the activity-based travel data my work audits, repairs, and generates.</figcaption>
+        <figcaption>Where it travels: desire lines across Daejeon's traffic zones (trips ≥ 5).</figcaption>
       </figure>
     </section>
 
