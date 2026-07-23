@@ -176,16 +176,21 @@
   }
 
   /* figures */
-  figure { margin: 1.7rem 0; }
-  figure img { display: block; width: 100%; height: auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
-  figure.portrait img { max-width: 16rem; margin-left: auto; margin-right: auto; }
-  figcaption { font-size: 0.8rem; color: var(--muted); line-height: 1.5; margin-top: 0.55rem; text-align: center; }
+  figure { margin: 1.5rem 0; }
+  figure img { display: block; width: auto; max-width: 100%; max-height: 280px; height: auto; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
+  figcaption { font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin-top: 0.5rem; text-align: center; }
+  .figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 1.5rem 0; align-items: end; }
+  .figrow figure { margin: 0; }
+  .figrow figure img { max-height: 190px; }
+  .embed { position: relative; padding-top: 56.25%; margin: 1.4rem 0 0; max-width: 38rem; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #000; }
+  .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
 
   @media (max-width: 860px) {
     .shell { grid-template-columns: 1fr; gap: 2.6rem; padding-top: 2.5rem; }
     .side { position: static; }
     .side nav { display: flex; flex-wrap: wrap; gap: 0.2rem 1.3rem; }
     .avatar { margin-bottom: 1rem; }
+    .figrow { grid-template-columns: 1fr; }
   }
   @media (max-width: 480px) {
     article.pub { grid-template-columns: 1fr; }
@@ -222,6 +227,7 @@
       <a href="#news">News</a>
       <a href="#research">Research</a>
       <a href="#dissertation">Dissertation</a>
+      <a href="#other">Other work</a>
     </nav>
   </aside>
 
@@ -245,14 +251,16 @@
         <li><span class="n">961 → 42</span><span class="l">studies screened into an evidence-scored map of AI travel models</span></li>
         <li><span class="n">32–37%</span><span class="l">how often LLM "repairs" restore the known true value, despite passing automated checks</span></li>
       </ul>
-      <figure>
-        <img src="assets/daejeon_temporal_rhythm.png" loading="lazy" alt="Smooth kernel-density curves of activity start times by trip purpose for Daejeon 2021, with home, work, and school peaks">
-        <figcaption>When a city travels: activity start times by purpose (Daejeon 2021). The daily rhythm my models learn to reproduce and are audited against.</figcaption>
-      </figure>
-      <figure>
-        <img src="assets/daejeon_visum_network.png" loading="lazy" alt="PTV Visum view of Daejeon's zone system with assigned demand shown as red flow bands over the road network">
-        <figcaption>Where it travels: Daejeon's zones and assigned demand in PTV Visum, the macroscopic ABM pipeline my current work plugs AI components into.</figcaption>
-      </figure>
+      <div class="figrow">
+        <figure>
+          <img src="assets/daejeon_temporal_rhythm.png" loading="lazy" alt="Smooth kernel-density curves of activity start times by trip purpose for Daejeon 2021, with home, work, and school peaks">
+          <figcaption>When a city travels: activity start times by purpose (Daejeon 2021).</figcaption>
+        </figure>
+        <figure>
+          <img src="assets/daejeon_visum_network.png" loading="lazy" alt="PTV Visum view of Daejeon's zone system with assigned demand shown as red flow bands over the road network">
+          <figcaption>Where it travels: Daejeon zones and demand in PTV Visum.</figcaption>
+        </figure>
+      </div>
     </section>
 
     <section id="news">
@@ -427,6 +435,16 @@
         31,074 trips), evaluated on the Chapter 2 trilemma axes against transformer, Markov, and rule-based
         baselines.</p>
       </details>
+    </section>
+
+    <section id="other">
+      <h2>Other work</h2>
+      <p class="lead">Earlier applied studies that shaped this direction, including trip generation under
+      spatial heterogeneity in Aklan, Philippines, comparing classical, geospatial (GWR), and
+      operator-learning (DeepONet) models.</p>
+      <div class="embed">
+        <iframe src="https://drive.google.com/file/d/1yzFchwQm0h0S3flitz4EswJTohn-P4MD/preview" allowfullscreen loading="lazy" title="Trip generation modeling, Aklan"></iframe>
+      </div>
     </section>
 
     <footer class="site">
