@@ -1,0 +1,456 @@
+<title>Kervin Joshua Lucas — Research</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --paper: #FBFCFB;
+    --ink: #24302B;
+    --muted: #6C7A74;
+    --faint: #98A49E;
+    --line: #E4E9E6;
+    --accent: #127353;
+    --accent-soft: #EAF3EE;
+    --flag: #B3372B;
+    --flag-soft: #F8ECEA;
+    --card: #FFFFFF;
+    --sans: "Segoe UI", -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --serif: "Palatino Linotype", Palatino, "Book Antiqua", Georgia, serif;
+    --mono: ui-monospace, "Cascadia Mono", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --paper: #151A18; --ink: #E2E8E4; --muted: #9AA8A1; --faint: #6E7B75;
+      --line: #26302B; --accent: #5CBD97; --accent-soft: #1B2A23;
+      --flag: #E0796C; --flag-soft: #2F201D; --card: #1A211E;
+    }
+  }
+  :root[data-theme="light"] {
+    --paper: #FBFCFB; --ink: #24302B; --muted: #6C7A74; --faint: #98A49E;
+    --line: #E4E9E6; --accent: #127353; --accent-soft: #EAF3EE;
+    --flag: #B3372B; --flag-soft: #F8ECEA; --card: #FFFFFF;
+  }
+  :root[data-theme="dark"] {
+    --paper: #151A18; --ink: #E2E8E4; --muted: #9AA8A1; --faint: #6E7B75;
+    --line: #26302B; --accent: #5CBD97; --accent-soft: #1B2A23;
+    --flag: #E0796C; --flag-soft: #2F201D; --card: #1A211E;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  body {
+    margin: 0; background: var(--paper); color: var(--ink);
+    font-family: var(--sans); font-size: 16.5px; line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover, a:focus-visible { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 2px; }
+
+  .wrap { max-width: 44rem; margin: 0 auto; padding: 0 1.4rem; }
+
+  /* ---------- nav ---------- */
+  nav.top {
+    position: sticky; top: 0; z-index: 10;
+    background: color-mix(in srgb, var(--paper) 88%, transparent);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  nav.top .wrap {
+    display: flex; align-items: baseline; gap: 1.6rem;
+    padding-top: 0.8rem; padding-bottom: 0.8rem;
+    font-size: 0.85rem;
+  }
+  nav.top .name { font-weight: 600; color: var(--ink); margin-right: auto; }
+  nav.top a { color: var(--muted); }
+  nav.top a:hover { color: var(--accent); text-decoration: none; }
+  @media (max-width: 560px) { nav.top .wrap { gap: 1rem; overflow-x: auto; white-space: nowrap; } }
+
+  /* ---------- header / overview ---------- */
+  header.site { padding: 4.5rem 0 0; }
+  h1 {
+    font-family: var(--serif);
+    font-size: 2.5rem; line-height: 1.12; margin: 0 0 0.6rem;
+    font-weight: 600; letter-spacing: -0.01em; text-wrap: balance;
+  }
+  .tagline {
+    font-size: 1.25rem; line-height: 1.5; color: var(--accent);
+    margin: 0 0 1.2rem; font-weight: 500; text-wrap: balance;
+  }
+  .affil { color: var(--muted); margin: 0; font-size: 0.95rem; line-height: 1.6; }
+  .links {
+    display: flex; flex-wrap: wrap; gap: 0.3rem 1.5rem; margin: 1.3rem 0 0;
+    padding: 0; font-size: 0.88rem; list-style: none;
+  }
+
+  .overview { margin-top: 3rem; }
+  .overview p { max-width: 62ch; margin: 0 0 1.1rem; }
+  .overview p:last-of-type { margin-bottom: 0; }
+
+  .headline-stats {
+    display: flex; flex-wrap: wrap; gap: 2.2rem;
+    margin: 2.2rem 0 0; padding: 1.4rem 0 0; list-style: none;
+    border-top: 1px solid var(--line);
+  }
+  .headline-stats li { flex: 1 1 10rem; }
+  .headline-stats .n {
+    display: block; font-family: var(--mono); font-variant-numeric: tabular-nums;
+    font-size: 1.45rem; color: var(--accent); line-height: 1.3;
+  }
+  .headline-stats li.warm .n { color: var(--flag); }
+  .headline-stats .l { display: block; font-size: 0.83rem; line-height: 1.5; color: var(--muted); margin-top: 0.2rem; }
+
+  /* ---------- sections ---------- */
+  section { margin-top: 5rem; scroll-margin-top: 4.5rem; }
+  h2 {
+    font-size: 1.35rem; font-weight: 600; font-family: var(--serif);
+    margin: 0 0 1.8rem; letter-spacing: -0.005em;
+  }
+  h2 .no {
+    font-family: var(--mono); font-size: 0.8rem; color: var(--faint);
+    font-weight: 400; margin-right: 0.8rem; vertical-align: 0.12em;
+  }
+
+  /* ---------- news ---------- */
+  .news { margin: 0; padding: 0; list-style: none; font-size: 0.95rem; }
+  .news li { display: flex; gap: 1.4rem; padding: 0.45rem 0; }
+  .news time {
+    font-family: var(--mono); font-size: 0.75rem; color: var(--faint);
+    white-space: nowrap; padding-top: 0.25rem; min-width: 5rem;
+  }
+
+  /* ---------- publications ---------- */
+  article.pub {
+    display: grid; grid-template-columns: 96px 1fr; gap: 1.5rem;
+    padding: 1.8rem 0;
+  }
+  article.pub + article.pub { border-top: 1px solid var(--line); }
+  .thumb {
+    width: 96px; height: 96px; border-radius: 10px;
+    background: var(--card); border: 1px solid var(--line); overflow: hidden;
+  }
+  .thumb svg { display: block; width: 100%; height: 100%; }
+  .pub h3 {
+    font-family: var(--serif);
+    font-size: 1.15rem; line-height: 1.4; margin: 0 0 0.3rem;
+    font-weight: 600; text-wrap: balance;
+  }
+  .authors { font-size: 0.85rem; color: var(--muted); margin: 0 0 0.5rem; }
+  .venue {
+    font-size: 0.8rem; margin: 0 0 0.7rem;
+    color: var(--accent); font-weight: 600;
+  }
+  .venue .status { color: var(--muted); font-weight: 400; }
+  .venue.warm { color: var(--flag); }
+  .tldr { margin: 0 0 0.6rem; font-size: 0.95rem; max-width: 60ch; color: var(--ink); }
+  .tldr strong { font-weight: 600; }
+  .res { font-size: 0.83rem; color: var(--faint); }
+  .res a { margin-right: 0.3rem; }
+
+  details.more { margin-top: 0.7rem; font-size: 0.92rem; }
+  details.more summary {
+    cursor: pointer; font-size: 0.83rem; color: var(--muted); list-style: none;
+    display: inline-block; padding: 0.15rem 0;
+  }
+  details.more summary:hover { color: var(--accent); }
+  details.more summary::-webkit-details-marker { display: none; }
+  details.more summary::before { content: "+ "; color: var(--accent); }
+  details.more[open] summary::before { content: "− "; }
+  details.more p { max-width: 60ch; margin: 0.7rem 0; color: var(--muted); }
+  .stats { display: flex; flex-wrap: wrap; gap: 1.6rem; margin: 0.9rem 0 0.3rem; padding: 0; list-style: none; }
+  .stats li { flex: 0 1 auto; }
+  .stats .n { display: block; font-family: var(--mono); font-variant-numeric: tabular-nums; font-size: 1rem; color: var(--accent); }
+  .stats li.flagged .n { color: var(--flag); }
+  .stats .l { display: block; font-size: 0.75rem; line-height: 1.45; color: var(--muted); margin-top: 0.1rem; max-width: 13rem; }
+
+  /* ---------- dissertation ---------- */
+  .chapters { overflow-x: auto; margin-top: 1.4rem; }
+  table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+  th, td { text-align: left; padding: 0.55rem 0.9rem 0.55rem 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--faint); font-weight: 600; }
+  td.ch { font-family: var(--mono); font-variant-numeric: tabular-nums; color: var(--accent); white-space: nowrap; }
+  td.st { font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+
+  footer.site {
+    margin-top: 5rem; padding: 1.6rem 0 3.5rem; border-top: 1px solid var(--line);
+    font-size: 0.83rem; color: var(--faint); line-height: 1.7;
+  }
+
+  @media (max-width: 560px) {
+    h1 { font-size: 2rem; }
+    .tagline { font-size: 1.1rem; }
+    article.pub { grid-template-columns: 72px 1fr; gap: 1rem; }
+    .thumb { width: 72px; height: 72px; }
+    .news li { gap: 0.9rem; }
+    .headline-stats { gap: 1.4rem; }
+  }
+</style>
+
+<nav class="top" aria-label="Page sections">
+  <div class="wrap">
+    <span class="name">Kervin Joshua Lucas</span>
+    <a href="#about">About</a>
+    <a href="#news">News</a>
+    <a href="#pubs">Research</a>
+    <a href="#diss">Dissertation</a>
+  </div>
+</nav>
+
+<div class="wrap">
+
+<header class="site" id="about">
+  <h1>Kervin Joshua Lucas</h1>
+  <p class="tagline">Trustworthy AI for travel behavior — when a language model fixes official data, who checks the checker?</p>
+  <p class="affil">PhD Researcher, Cho Chun Shik Graduate School of Mobility, KAIST · Daejeon, South Korea<br>
+  KAIST Mobility Group · Advisor: Prof. Inhi Kim</p>
+  <ul class="links">
+    <li><a href="mailto:lucaskerv@kaist.ac.kr">Email</a></li>
+    <li><a href="https://kaistmobilitygroup.com">KAIST Mobility Group</a></li>
+    <li><a href="#">Google Scholar</a></li>
+    <li><a href="#">GitHub</a></li>
+    <li><a href="#">CV</a></li>
+  </ul>
+</header>
+
+<section class="overview" aria-label="Research overview">
+  <p>I study large language models in the pipelines that produce official travel statistics — the data
+  behind mode-share figures, demand models, and infrastructure investment cases. My research documents
+  a failure mode with real policy stakes: LLMs will "repair" data to satisfy whatever an automated
+  verifier asserts, even when the verifier itself is wrong, and the result carries a
+  <em>verified</em> label it did not earn.</p>
+  <p>The constructive half of the work builds verifiers that are provably sound under the measurement
+  uncertainty of real mobility data, so repair and generation loops can only be asked to fix what the
+  data can actually prove broken. Five connected studies carry this arc from measurement to guarantee,
+  and my dissertation extends it from repairing observed travel diaries to generating certified daily
+  activity schedules.</p>
+  <ul class="headline-stats">
+    <li class="warm"><span class="n">0 / 10,090</span><span class="l">refusals when six LLMs repaired data against phantom constraints</span></li>
+    <li><span class="n">27.7% → 1.6%</span><span class="l">false speed flags eliminated by interval-sound verification</span></li>
+    <li><span class="n">5 papers</span><span class="l">one arc: measure → diagnose → construct → apply → generate</span></li>
+  </ul>
+</section>
+
+<section id="news" aria-labelledby="news-h">
+  <h2 id="news-h"><span class="no">01</span>News</h2>
+  <ul class="news">
+    <li><time datetime="2026-07">Jul 2026</time><span>Two papers submitted to <strong>AAAI-27</strong>: a diagnosis of phantom-constraint repair and its constructive counterpart, interval-sound verifiers.</span></li>
+    <li><time datetime="2026-07">Jul 2026</time><span>Revised manuscript of the AI-ABM trilemma review resubmitted to the <strong>International Journal of Urban Sciences</strong>.</span></li>
+    <li><time datetime="2026-07">Jul 2026</time><span>Full audit of LLM travel-diary repair in preparation for <strong>Transportation Research Part C</strong>.</span></li>
+  </ul>
+</section>
+
+<section id="pubs" aria-labelledby="pubs-h">
+  <h2 id="pubs-h"><span class="no">02</span>Publications &amp; manuscripts</h2>
+
+  <article class="pub">
+    <div class="thumb" aria-hidden="true">
+      <svg viewBox="0 0 96 96">
+        <polygon points="48,14 12,78 84,78" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+        <polygon points="48,36 30,68 66,68" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1"/>
+        <circle cx="52" cy="62" r="3.2" fill="var(--accent)"/>
+        <circle cx="59" cy="66" r="2.2" fill="var(--accent)" opacity="0.7"/>
+        <circle cx="44" cy="56" r="2.2" fill="var(--accent)" opacity="0.7"/>
+        <circle cx="39" cy="66" r="1.8" fill="var(--muted)" opacity="0.6"/>
+        <text x="48" y="11" text-anchor="middle" font-size="7" fill="var(--muted)" font-family="monospace">I</text>
+        <text x="7" y="84" font-size="7" fill="var(--muted)" font-family="monospace">F</text>
+        <text x="85" y="84" font-size="7" fill="var(--muted)" font-family="monospace">E</text>
+      </svg>
+    </div>
+    <div>
+      <h3>An Evidence-Based Review of AI-Enhanced Activity-Based Models: Trade-offs Between Interpretability, Fidelity, and Efficiency</h3>
+      <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
+      <p class="venue">Int. J. of Urban Sciences <span class="status">· revision under review</span></p>
+      <p class="tldr"><strong>42 scored studies, one map:</strong> AI travel models cluster at the fidelity
+      vertex of an interpretability–fidelity–efficiency trilemma; the other two axes go chronically unmeasured.</p>
+      <p class="res"><a href="#">preprint</a> · <a href="#">scoring data</a></p>
+      <details class="more">
+        <summary>Abstract &amp; key numbers</summary>
+        <p>Progress in AI-enhanced activity-based travel models is constrained by an under-articulated
+        three-way trade-off among behavioral interpretability, predictive fidelity, and computational
+        efficiency. From a structured review (961 records screened to 42 core studies, 2001–2025), every
+        study is scored on falsifiable indicators and mapped into a normalized trilemma space
+        (I + F + E = 20) with a strict-Pareto frontier. Quality is use-case-dependent: progress reads as
+        movement within target regions, not toward a universal optimum.</p>
+        <ul class="stats">
+          <li><span class="n">961 → 42</span><span class="l">screening funnel to core scored studies</span></li>
+          <li><span class="n">I + F + E = 20</span><span class="l">constant-sum trilemma space, Pareto frontier</span></li>
+        </ul>
+      </details>
+    </div>
+  </article>
+
+  <article class="pub">
+    <div class="thumb" aria-hidden="true">
+      <svg viewBox="0 0 96 96">
+        <rect x="14" y="20" width="30" height="40" rx="2" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>
+        <line x1="20" y1="29" x2="39" y2="29" stroke="var(--muted)" stroke-width="2" opacity="0.5"/>
+        <line x1="20" y1="36" x2="39" y2="36" stroke="var(--muted)" stroke-width="2" opacity="0.5"/>
+        <line x1="20" y1="43" x2="34" y2="43" stroke="var(--flag)" stroke-width="2"/>
+        <path d="M58 20 v46" stroke="var(--flag)" stroke-width="2.5"/>
+        <path d="M58 20 l22 7 -22 7 z" fill="var(--flag)"/>
+        <circle cx="70" cy="64" r="11" fill="none" stroke="var(--accent)" stroke-width="2"/>
+        <path d="M64.5 64 l3.5 3.5 7.5 -8" fill="none" stroke="var(--accent)" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3>Garbage In, Verified Out When the Verifier Is Wrong</h3>
+      <p class="authors">Authors withheld during double-blind review</p>
+      <p class="venue warm">AAAI-27 <span class="status">· under review</span></p>
+      <p class="tldr"><strong>Zero refusals in 10,090 encounters:</strong> six LLMs, frontier to local 7B,
+      executed repairs against constraints a defective verifier invented — and stronger models were no more skeptical.</p>
+      <p class="res"><a href="#">response corpus</a> · <a href="#">classification instrument</a></p>
+      <details class="more">
+        <summary>Abstract &amp; key numbers</summary>
+        <p>LLM-Modulo repair frameworks act on whatever their symbolic verifier asserts. We document a
+        working pipeline in which the verifier was wrong: a data-loading defect made its speed checks
+        assert violations the data could not support. Spontaneous doubt about the data appeared in 1.33%
+        of encounters, and doubt naming the defective value did not track model capability — the frontier
+        model named it once in 1,688 encounters against eighteen times for a local 9B model. Repairs
+        against the unsupported flags collapsed walking among affected travelers from roughly seven in
+        ten trips to under one in ten. Deployed repair loops require <em>verifier verification</em>: the
+        critic's soundness must be audited with the same rigor as the generator's outputs.</p>
+        <ul class="stats">
+          <li class="flagged"><span class="n">0 / 10,090</span><span class="l">refusals across phantom-constraint repairs</span></li>
+          <li class="flagged"><span class="n">1.33%</span><span class="l">spontaneous doubt (95% CI 1.10–1.56)</span></li>
+          <li class="flagged"><span class="n">71.8% → &lt;10%</span><span class="l">walk share among affected travelers after "verified" repair</span></li>
+        </ul>
+      </details>
+    </div>
+  </article>
+
+  <article class="pub">
+    <div class="thumb" aria-hidden="true">
+      <svg viewBox="0 0 96 96">
+        <line x1="14" y1="26" x2="82" y2="26" stroke="var(--accent)" stroke-width="4" stroke-linecap="round"/>
+        <line x1="26" y1="42" x2="68" y2="42" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" opacity="0.75"/>
+        <line x1="37" y1="58" x2="57" y2="58" stroke="var(--accent)" stroke-width="4" stroke-linecap="round" opacity="0.55"/>
+        <circle cx="47" cy="75" r="3.2" fill="var(--flag)"/>
+        <line x1="47" y1="18" x2="47" y2="82" stroke="var(--muted)" stroke-width="1" stroke-dasharray="3 3" opacity="0.6"/>
+      </svg>
+    </div>
+    <div>
+      <h3>Sound Verifiers for LLM-Modulo Data Repair under Measurement Uncertainty</h3>
+      <p class="authors">Authors withheld during double-blind review</p>
+      <p class="venue warm">AAAI-27 <span class="status">· under review</span></p>
+      <p class="tldr"><strong>Flag only what the data can prove:</strong> interval-valued verifiers cut false
+      speed flags from 27.7% to 1.6% and halve the mode-share distortion LLM repair introduces.</p>
+      <p class="res"><a href="#">code</a> · <a href="#">proofs</a></p>
+      <details class="more">
+        <summary>Abstract &amp; key numbers</summary>
+        <p>If repair loops obey the verifier, the verifier must be sound — yet real mobility data carries
+        structural measurement uncertainty (zone-centroid geometry, 5-minute clock rounding, censored
+        durations) that lets point-estimate checks manufacture violations the data cannot support. We
+        construct verifiers that flag a trip only when <em>every</em> measurement completion consistent
+        with the data violates the constraint, with a monotonicity guarantee that narrower measurement
+        configurations always contain the sound flag set. The mode-share result replicates across five
+        open-weights model families.</p>
+        <ul class="stats">
+          <li><span class="n">27.7% → 1.6%</span><span class="l">walking trips speed-flagged: point-estimate vs interval-sound</span></li>
+          <li><span class="n">≈ 2×</span><span class="l">extra mode-share distortion under point-estimate verification</span></li>
+          <li><span class="n">11,933</span><span class="l">trips audited in a municipal household travel survey</span></li>
+        </ul>
+      </details>
+    </div>
+  </article>
+
+  <article class="pub">
+    <div class="thumb" aria-hidden="true">
+      <svg viewBox="0 0 96 96">
+        <line x1="14" y1="78" x2="82" y2="78" stroke="var(--line)" stroke-width="1.5"/>
+        <rect x="20" y="30" width="12" height="48" fill="var(--accent)" opacity="0.85"/>
+        <rect x="38" y="46" width="12" height="32" fill="var(--accent)" opacity="0.55"/>
+        <rect x="60" y="66" width="12" height="12" fill="var(--flag)"/>
+        <path d="M52 40 q9 -7 16 14" fill="none" stroke="var(--flag)" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <path d="M68 52 l0 4 -3.2 -2.2 z" fill="var(--flag)"/>
+      </svg>
+    </div>
+    <div>
+      <h3>Auditing Verifiers, Prompts, and Transport Statistics in LLM Travel-Diary Repair</h3>
+      <p class="authors">Kervin Joshua Lucas, Tengfeng Lin, Inhi Kim</p>
+      <p class="venue">Transportation Research Part C <span class="status">· in preparation</span></p>
+      <p class="tldr"><strong>Passing checks ≠ recovering truth:</strong> LLMs resolved up to 86% of flags in
+      two national travel surveys but restored the known true value in barely a third of cases.</p>
+      <p class="res"><a href="#">protocol</a> · <a href="#">data deposit</a></p>
+      <details class="more">
+        <summary>Abstract &amp; key numbers</summary>
+        <p>Auditing the Daejeon subset of Korea's 2021 National Travel Survey and Australia's VISTA
+        FY2022/23, this study separates verifier compliance, truth recovery, and preservation of
+        population transport statistics — three things usually conflated. Unsupported verifier rules, not
+        real data errors, decided which records were sent for repair; repaired pipelines cut observed
+        walk share by 8.4–14.4 percentage points; and evidence-qualified screening found zero cases where
+        released fields could establish an automatic replacement. The contribution is a protocol that
+        separates review from rewriting and evaluates population effects under the official survey design.</p>
+        <ul class="stats">
+          <li><span class="n">78.6–85.9%</span><span class="l">of injected flags "resolved" by LLM repair…</span></li>
+          <li class="flagged"><span class="n">32.1–37.4%</span><span class="l">…but the known true value restored in only a third</span></li>
+          <li><span class="n">0 eligible</span><span class="l">auto-repair cases among 8,940 assessable respondents</span></li>
+        </ul>
+      </details>
+    </div>
+  </article>
+
+  <article class="pub">
+    <div class="thumb" aria-hidden="true">
+      <svg viewBox="0 0 96 96">
+        <rect x="22" y="26" width="36" height="46" rx="2" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>
+        <rect x="28" y="20" width="36" height="46" rx="2" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>
+        <line x1="35" y1="31" x2="57" y2="31" stroke="var(--muted)" stroke-width="2" opacity="0.5"/>
+        <line x1="35" y1="38" x2="57" y2="38" stroke="var(--muted)" stroke-width="2" opacity="0.5"/>
+        <line x1="35" y1="45" x2="50" y2="45" stroke="var(--muted)" stroke-width="2" opacity="0.5"/>
+        <path d="M66 48 l12 4.5 v10.5 q0 10.5 -12 15 q-12 -4.5 -12 -15 v-10.5 z" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.8"/>
+        <path d="M61 62 l3.5 3.5 7 -8" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div>
+      <h3>Verification Governance for Generative AI in Official Travel Data</h3>
+      <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
+      <p class="venue">Transport Policy <span class="status">· VSI on Generative AI · planned</span></p>
+      <p class="tldr"><strong>Who audits the algorithm that audits the data?</strong> A governance framework
+      and agency-facing checklist for generative AI entering official statistics pipelines.</p>
+      <details class="more">
+        <summary>Scope</summary>
+        <p>The policy companion to the technical arc. GenAI data tools are entering the layer that feeds
+        mode-share statistics, demand models, and investment cases; the documented failure is
+        sociotechnical — a "verified" label transferred institutional trust to broken output while no
+        actor owned data-defect liability. Proposes provenance requirements, verifier auditing, soundness
+        standards, and procurement language for transport agencies.</p>
+      </details>
+    </div>
+  </article>
+
+</section>
+
+<section id="diss" aria-labelledby="diss-h">
+  <h2 id="diss-h"><span class="no">03</span>Dissertation</h2>
+  <p><strong>LLM-Powered Activity Scheduling with Sound Verifier Guarantees</strong> (working title).
+  Thesis: LLM-in-the-loop pipelines can generate and repair daily activity schedules that are
+  simultaneously interpretable, distributionally faithful, and efficient — <em>provided</em> they are
+  grounded by verifiers that are sound under measurement uncertainty.</p>
+  <div class="chapters">
+    <table>
+      <thead><tr><th>Ch.</th><th>Role</th><th>Basis</th><th>Status</th></tr></thead>
+      <tbody>
+        <tr><td class="ch">2</td><td>Measure — the interpretability–fidelity–efficiency trilemma</td><td>IJUS review paper</td><td class="st">R1 under review</td></tr>
+        <tr><td class="ch">3</td><td>Diagnose — phantom verifiers corrupt LLM repair</td><td>AAAI-27 submission</td><td class="st">under review</td></tr>
+        <tr><td class="ch">4</td><td>Construct — interval-sound verifiers</td><td>AAAI-27 submission</td><td class="st">under review</td></tr>
+        <tr><td class="ch">5</td><td>Apply I — LLM-Modulo repair of survey diaries</td><td>TRC manuscript</td><td class="st">in preparation</td></tr>
+        <tr><td class="ch">6</td><td>Apply II — verifier-certified LLM activity scheduler (NHTS 2022)</td><td>new core work</td><td class="st">designed</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <details class="more">
+    <summary>Chapter 6 design</summary>
+    <p>Chapter 6 generalizes the repair loop into a <em>generation</em> loop: an LLM proposes a full-day
+    activity schedule for a persona, a sound scheduler-verifier audits it, provable violations return as
+    structured critiques, and the loop accepts only at zero provable violations — every accepted schedule
+    carrying a constraint certificate. Built on the NHTS 2022 NextGen survey (10,592 person-day chains,
+    31,074 trips), evaluated on the Chapter 2 trilemma axes against transformer, Markov, and rule-based
+    baselines.</p>
+  </details>
+</section>
+
+<footer class="site">
+  <p>Kervin Joshua Lucas · KAIST · Supported in part by MOLIT (Korea) grant RS-2022-00141102.<br>
+  Draft page — links and repositories to be added before publication.</p>
+</footer>
+
+</div>
