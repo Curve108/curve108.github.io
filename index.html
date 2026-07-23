@@ -1,4 +1,4 @@
-<title>Kervin Joshua Lucas — Research</title>
+<title>Kervin Joshua Lucas · Research</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
   :root {
@@ -221,26 +221,26 @@
     <section id="about">
       <h2>About</h2>
       <p class="lead">I study large language models in the pipelines that produce official travel
-      statistics — the data behind mode-share figures, demand models, and infrastructure investment
-      cases. My research documents a failure mode with real policy stakes: LLMs will "repair" data to
+      statistics: the data behind mode-share figures, demand models, and infrastructure investment
+      cases. My research documents a failure mode with real policy stakes. LLMs will "repair" data to
       satisfy whatever an automated verifier asserts, even when the verifier itself is wrong, and the
       result carries a <em>verified</em> label it did not earn.</p>
       <p class="lead">The constructive half of the work builds automated checks that flag only what the
-      data can actually prove — not artifacts of how it was measured — so repair and generation loops are
+      data can actually prove, not artifacts of how it was measured, so repair and generation loops are
       never asked to fix what the data cannot show is broken. Five connected studies carry this arc from
       measurement to guarantee, and my dissertation extends it from repairing observed travel diaries to
       generating certified daily activity schedules.</p>
       <ul class="headline-stats">
         <li><span class="n">5 papers</span><span class="l">one connected arc: measure → diagnose → construct → apply → generate</span></li>
         <li><span class="n">961 → 42</span><span class="l">studies screened into an evidence-scored map of AI travel models</span></li>
-        <li><span class="n">32–37%</span><span class="l">how often LLM "repairs" restore the known true value — despite passing automated checks</span></li>
+        <li><span class="n">32–37%</span><span class="l">how often LLM "repairs" restore the known true value, despite passing automated checks</span></li>
       </ul>
     </section>
 
     <section id="news">
       <h2>News</h2>
       <ul class="news">
-        <li><time datetime="2026-07">Jul 2026</time><span>Two manuscripts on verification soundness for LLM data repair entered <strong>double-blind peer review</strong> — details will appear here after notification.</span></li>
+        <li><time datetime="2026-07">Jul 2026</time><span>Two manuscripts on verification soundness for LLM data repair entered <strong>double-blind peer review</strong>. Details will appear here after notification.</span></li>
         <li><time datetime="2026-07">Jul 2026</time><span>Revised manuscript of the AI-ABM trilemma review resubmitted to the <strong>International Journal of Urban Sciences</strong>.</span></li>
         <li><time datetime="2026-07">Jul 2026</time><span>Full audit of LLM travel-diary repair in preparation for <strong>Transportation Research Part C</strong>.</span></li>
       </ul>
@@ -267,14 +267,14 @@
           <h3>An Evidence-Based Review of AI-Enhanced Activity-Based Models: Trade-offs Between Interpretability, Fidelity, and Efficiency</h3>
           <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
           <p class="venue">Int. J. of Urban Sciences <span class="status">· revision under review</span></p>
-          <p class="tldr"><strong>42 scored studies, one map:</strong> AI travel models cluster at the fidelity
-          vertex of an interpretability–fidelity–efficiency trilemma; the other two axes go chronically unmeasured.</p>
+          <p class="tldr"><strong>42 scored studies, one map:</strong> AI travel models pile up on predictive
+          fidelity, while behavioral interpretability and computational efficiency go chronically unmeasured.</p>
           <p class="res"><a href="#">preprint</a> · <a href="#">scoring data</a></p>
           <details class="more">
             <summary>Abstract &amp; key numbers</summary>
             <p>Progress in AI-enhanced activity-based travel models is constrained by an under-articulated
             three-way trade-off among behavioral interpretability, predictive fidelity, and computational
-            efficiency. From a structured review (961 records screened to 42 core studies, 2001–2025), every
+            efficiency. From a structured review (961 records screened to 42 core studies from 2001 to 2025), every
             study is scored on falsifiable indicators and mapped into a normalized trilemma space
             (I + F + E = 20) with a strict-Pareto frontier. Quality is use-case-dependent: progress reads as
             movement within target regions, not toward a universal optimum.</p>
@@ -332,9 +332,9 @@
             <summary>Abstract &amp; key numbers</summary>
             <p>Auditing the Daejeon subset of Korea's 2021 National Travel Survey and Australia's VISTA
             FY2022/23, this study separates verifier compliance, truth recovery, and preservation of
-            population transport statistics — three things usually conflated. Unsupported verifier rules, not
+            population transport statistics, three things usually conflated. Unsupported verifier rules, not
             real data errors, decided which records were sent for repair; repaired pipelines cut observed
-            walk share by 8.4–14.4 percentage points; and evidence-qualified screening found zero cases where
+            walk share by 8.4 to 14.4 percentage points; and evidence-qualified screening found zero cases where
             released fields could establish an automatic replacement. The contribution is a protocol that
             separates review from rewriting and evaluates population effects under the official survey design.</p>
             <ul class="stats">
@@ -368,7 +368,7 @@
             <summary>Scope</summary>
             <p>The policy companion to the technical arc. GenAI data tools are entering the layer that feeds
             mode-share statistics, demand models, and investment cases; the documented failure is
-            sociotechnical — a "verified" label transferred institutional trust to broken output while no
+            sociotechnical. A "verified" label transferred institutional trust to broken output while no
             actor owned data-defect liability. Proposes provenance requirements, verifier auditing, soundness
             standards, and procurement language for transport agencies.</p>
           </details>
@@ -381,17 +381,17 @@
       <h2>Dissertation</h2>
       <p class="diss-intro"><strong>LLM-Powered Activity Scheduling with Sound Verifier Guarantees</strong>
       (working title). Thesis: LLM-in-the-loop pipelines can generate and repair daily activity schedules
-      that are simultaneously interpretable, distributionally faithful, and efficient — <em>provided</em>
+      that are simultaneously interpretable, distributionally faithful, and efficient, <em>provided</em>
       they are grounded by verifiers that are sound under measurement uncertainty.</p>
       <div class="chapters">
         <table>
-          <thead><tr><th>Ch.</th><th>Role</th><th>Basis</th><th>Status</th></tr></thead>
+          <thead><tr><th>Ch.</th><th>Stage</th><th>Focus</th><th>Status</th></tr></thead>
           <tbody>
-            <tr><td class="ch">2</td><td>Measure — the interpretability–fidelity–efficiency trilemma</td><td>IJUS review paper</td><td class="st">R1 under review</td></tr>
-            <tr><td class="ch">3</td><td>Diagnose — unsound verifiers corrupt LLM repair</td><td>manuscript · in review</td><td class="st">under review</td></tr>
-            <tr><td class="ch">4</td><td>Construct — provably sound verification</td><td>manuscript · in review</td><td class="st">under review</td></tr>
-            <tr><td class="ch">5</td><td>Apply I — LLM-Modulo repair of survey diaries</td><td>TRC manuscript</td><td class="st">in preparation</td></tr>
-            <tr><td class="ch">6</td><td>Apply II — verifier-certified LLM activity scheduler (NHTS 2022)</td><td>new core work</td><td class="st">designed</td></tr>
+            <tr><td class="ch">2</td><td>Measure</td><td>The interpretability, fidelity, and efficiency trilemma</td><td class="st">IJUS review, R1 in review</td></tr>
+            <tr><td class="ch">3</td><td>Diagnose</td><td>How unsound verifiers corrupt LLM repair</td><td class="st">manuscript, in review</td></tr>
+            <tr><td class="ch">4</td><td>Construct</td><td>Provably sound verification</td><td class="st">manuscript, in review</td></tr>
+            <tr><td class="ch">5</td><td>Apply</td><td>LLM-Modulo repair of survey diaries</td><td class="st">TRC, in preparation</td></tr>
+            <tr><td class="ch">6</td><td>Generate</td><td>Verifier-certified activity scheduler (NHTS 2022)</td><td class="st">new core work, designed</td></tr>
           </tbody>
         </table>
       </div>
@@ -399,8 +399,8 @@
         <summary>Chapter 6 design</summary>
         <p>Chapter 6 generalizes the repair loop into a <em>generation</em> loop: an LLM proposes a full-day
         activity schedule for a persona, a sound scheduler-verifier audits it, provable violations return as
-        structured critiques, and the loop accepts only at zero provable violations — every accepted schedule
-        carrying a constraint certificate. Built on the NHTS 2022 NextGen survey (10,592 person-day chains,
+        structured critiques, and the loop accepts only at zero provable violations, with every accepted
+        schedule carrying a constraint certificate. Built on the NHTS 2022 NextGen survey (10,592 person-day chains,
         31,074 trips), evaluated on the Chapter 2 trilemma axes against transformer, Markov, and rule-based
         baselines.</p>
       </details>
@@ -408,7 +408,7 @@
 
     <footer class="site">
       Kervin Joshua Lucas · KAIST · Supported in part by MOLIT (Korea) grant RS-2022-00141102.<br>
-      Draft page — links and repositories to be added before publication.
+      Draft page. Links and repositories to be added before publication.
     </footer>
 
   </main>
