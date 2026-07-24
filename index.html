@@ -58,11 +58,10 @@
   .side { position: sticky; top: 2.5rem; }
   .avatar {
     width: 116px; height: 116px; border-radius: 50%;
-    display: grid; place-items: center;
+    display: grid; place-items: center; object-fit: cover;
     background: var(--accent-soft); color: var(--accent);
     font-family: var(--serif); font-size: 2.5rem; font-weight: 600; letter-spacing: 0.02em;
     border: 1px solid var(--line); margin-bottom: 1.4rem;
-    /* Swap for a photo: replace the .avatar div with <img class="avatar" src="me.jpg" alt=""> */
   }
   .side h1 {
     font-family: var(--serif); font-size: 1.7rem; line-height: 1.18;
@@ -226,7 +225,7 @@
 <div class="shell">
 
   <aside class="side">
-    <div class="avatar" aria-hidden="true">KL</div>
+    <img class="avatar" src="assets/me.jpg" alt="Kervin Joshua Lucas">
     <h1>Kervin Joshua Lucas</h1>
     <p class="role">PhD Candidate · Trustworthy AI for Mobility</p>
     <p class="affil">Cho Chun Shik Graduate School of Mobility, KAIST · Daejeon, South Korea<br>
