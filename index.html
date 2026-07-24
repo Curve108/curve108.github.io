@@ -184,6 +184,15 @@
   .figrow figure img { max-height: 190px; }
   .embed { position: relative; padding-top: 56.25%; margin: 1.4rem 0 0; max-width: 38rem; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #000; }
   .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  /* cv lists (education / experience) */
+  ul.cv { list-style: none; margin: 0; padding: 0; }
+  ul.cv li { padding: 0.85rem 0; border-bottom: 1px solid var(--line); }
+  ul.cv li:last-child { border-bottom: none; }
+  .cv-head { display: flex; justify-content: space-between; align-items: baseline; gap: 1rem; flex-wrap: wrap; }
+  .cv-title { font-weight: 600; }
+  .cv-when { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); white-space: nowrap; }
+  .cv-org { color: var(--muted); font-size: 0.92rem; margin-top: 0.1rem; }
+  .cv-note { font-size: 0.88rem; color: var(--muted); margin-top: 0.35rem; max-width: 64ch; }
 
   @media (max-width: 860px) {
     .shell { grid-template-columns: 1fr; gap: 2.6rem; padding-top: 2.5rem; }
@@ -204,7 +213,7 @@
   <aside class="side">
     <div class="avatar" aria-hidden="true">KL</div>
     <h1>Kervin Joshua Lucas</h1>
-    <p class="role">PhD Researcher · Trustworthy AI for Mobility</p>
+    <p class="role">PhD Candidate · Trustworthy AI for Mobility</p>
     <p class="affil">Cho Chun Shik Graduate School of Mobility, KAIST · Daejeon, South Korea<br>
     KAIST Mobility Group · Advisor: Prof. Inhi Kim</p>
 
@@ -220,6 +229,8 @@
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z" opacity="0.55"/></svg></a></li>
       <li><a href="https://github.com/Curve108" title="GitHub" aria-label="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a></li>
+      <li><a href="https://www.linkedin.com/in/kervin-joshua-lucas-92169610b/" title="LinkedIn" aria-label="LinkedIn">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></li>
     </ul>
 
     <nav aria-label="Sections">
@@ -228,6 +239,8 @@
       <a href="#research">Research</a>
       <a href="#dissertation">Dissertation</a>
       <a href="#other">Other work</a>
+      <a href="#education">Education</a>
+      <a href="#experience">Experience</a>
     </nav>
   </aside>
 
@@ -445,6 +458,42 @@
       <div class="embed">
         <iframe src="https://drive.google.com/file/d/1yzFchwQm0h0S3flitz4EswJTohn-P4MD/preview" allowfullscreen loading="lazy" title="Trip generation modeling, Aklan"></iframe>
       </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <ul class="cv">
+        <li>
+          <div class="cv-head"><span class="cv-title">PhD, Mobility</span><span class="cv-when">Since 2024</span></div>
+          <div class="cv-org">Cho Chun Shik Graduate School of Mobility, KAIST · Daejeon, South Korea</div>
+          <div class="cv-note">Third-year candidate, expected 2028. Travel demand modeling and trustworthy AI for activity-based models.</div>
+        </li>
+        <li>
+          <div class="cv-head"><span class="cv-title">MSc, Civil Engineering</span><span class="cv-when">2017–2020</span></div>
+          <div class="cv-org">De La Salle University · Manila, Philippines</div>
+          <div class="cv-note">Thesis: effects of traffic congestion pricing schemes on travel behavior in Bonifacio Global City, Taguig.</div>
+        </li>
+        <li>
+          <div class="cv-head"><span class="cv-title">BSc, Civil Engineering</span><span class="cv-when">2009–2014</span></div>
+          <div class="cv-org">De La Salle University · Manila, Philippines</div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <ul class="cv">
+        <li>
+          <div class="cv-head"><span class="cv-title">Assistant Professorial Lecturer</span><span class="cv-when">2021–2023</span></div>
+          <div class="cv-org">De La Salle University · Part-time</div>
+          <div class="cv-note">Taught transportation engineering and transport-modeling software courses.</div>
+        </li>
+        <li>
+          <div class="cv-head"><span class="cv-title">Science Research Specialist</span><span class="cv-when">2015–2022</span></div>
+          <div class="cv-org">Civil Engineering Department, De La Salle University · Full-time</div>
+          <div class="cv-note">Transportation-planning data collection and analysis; modeled Metro Manila road and traffic networks for transport studies; supported teaching and departmental research.</div>
+        </li>
+      </ul>
     </section>
 
     <footer class="site">
