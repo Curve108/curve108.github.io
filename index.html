@@ -198,6 +198,15 @@
   .cv-when { font-family: var(--mono); font-size: 0.74rem; color: var(--faint); white-space: nowrap; }
   .cv-org { color: var(--muted); font-size: 0.92rem; margin-top: 0.1rem; }
   .cv-note { font-size: 0.88rem; color: var(--muted); margin-top: 0.35rem; max-width: 64ch; }
+  /* publication list */
+  .pub-group { font-family: var(--mono); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--accent); margin: 1.7rem 0 0.7rem; }
+  ul.pubs { list-style: none; margin: 0; padding: 0; }
+  ul.pubs li { padding: 0.6rem 0; border-bottom: 1px solid var(--line); }
+  ul.pubs li:last-child { border-bottom: none; }
+  .pub-t { font-weight: 600; font-size: 0.94rem; line-height: 1.4; }
+  .pub-m { font-size: 0.81rem; color: var(--muted); margin-top: 0.2rem; line-height: 1.55; }
+  .pub-m strong { color: var(--ink); font-weight: 600; }
+  .pub-m .cite { color: var(--faint); font-variant-numeric: tabular-nums; }
 
   @media (max-width: 860px) {
     .shell { grid-template-columns: 1fr; gap: 2.6rem; padding-top: 2.5rem; }
@@ -245,6 +254,7 @@
       <a href="#news">News</a>
       <a href="#research">Research</a>
       <a href="#dissertation">Dissertation</a>
+      <a href="#publications">Publications</a>
       <a href="#other">Other work</a>
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
@@ -455,6 +465,80 @@
         31,074 trips), evaluated on the Chapter 2 trilemma axes against transformer, Markov, and rule-based
         baselines.</p>
       </details>
+    </section>
+
+    <section id="publications">
+      <h2>Publications</h2>
+      <p class="lead">Peer-reviewed journal and conference work. Full list and live citation counts on
+      <a href="https://scholar.google.com/citations?user=8FfIVzIAAAAJ">Google Scholar</a>.</p>
+
+      <div class="pub-group">Journal articles</div>
+      <ul class="pubs">
+        <li>
+          <div class="pub-t">Smart region mobility framework</div>
+          <div class="pub-m">R.K.C. Billones, M.A. Guillermo, <strong>K.C. Lucas</strong>, M.D. Era, E.P. Dadios, A.M. Fillone · Sustainability 13(11), 6366 · 2021 · <span class="cite">43 citations</span></div>
+        </li>
+        <li>
+          <div class="pub-t">Strategic transit route recommendation considering multi-trip feature desirability using a logit model with optimal travel-time analysis</div>
+          <div class="pub-m">M.A. Guillermo, M.C. Rivera, <strong>K.J.C. Lucas</strong>, R.S. Concepcion II, A.A. Bandala, et al. · Journal of Advanced Computational Intelligence and Intelligent Informatics · 2022 · <span class="cite">7 citations</span></div>
+        </li>
+      </ul>
+
+      <div class="pub-group">Korean conferences</div>
+      <ul class="pubs">
+        <li>
+          <div class="pub-t">Recursive neurosymbolic optimization for the semantic repair of structurally inconsistent household travel surveys</div>
+          <div class="pub-m"><strong>K.J. Lucas</strong>, J. Lee, I. Kim · Korea ITS Society Conference (한국 ITS 학회 학술대회) · 2026</div>
+        </li>
+        <li>
+          <div class="pub-t">Prediction models for travel mode and trip purpose using operator networks to advance activity-based models</div>
+          <div class="pub-m"><strong>K.J. Lucas</strong>, I. Kim · Korean Society of Transportation Conference (대한교통학회 학술대회) · 2025</div>
+        </li>
+        <li>
+          <div class="pub-t">Trip generation in the Philippines: analysis of traditional, geospatial, and AI-based models</div>
+          <div class="pub-m"><strong>K.J. Lucas</strong>, A. Fillone, I. Kim · Suwon ITS Asia-Pacific Forum · 2025</div>
+        </li>
+        <li>
+          <div class="pub-t">Evaluating spatiotemporal influence on trip-chain prediction</div>
+          <div class="pub-m"><strong>K.J. Lucas</strong>, J. Lee, S. Paek, I. Kim · Suwon ITS Asia-Pacific Forum · 2025</div>
+        </li>
+        <li>
+          <div class="pub-t">여행 연쇄 예측에서 시공간적 영향 평가 (Evaluating spatiotemporal influence on trip-chain prediction)</div>
+          <div class="pub-m"><strong>K.J. Lucas</strong>, J. Lee, S. Paek, I. Kim · Korea ITS Society 2025 Spring Conference (한국 ITS 학회 2025 춘계학술대회) · 2025</div>
+        </li>
+        <li>
+          <div class="pub-t">Developing a framework for a complete transport forecasting system: a literature review</div>
+          <div class="pub-m"><strong>K.J. Lucas</strong>, I. Kim · Korea ITS Society Conference (한국 ITS 학회 학술대회) · 2024</div>
+        </li>
+      </ul>
+
+      <div class="pub-group">International &amp; Philippine conferences</div>
+      <ul class="pubs">
+        <li>
+          <div class="pub-t">Transportation Infrastructure Impacts Calculator (TIIC): an infrastructure assessment tool</div>
+          <div class="pub-m">A.E.C. Ruiz, N.R. Roxas Jr, K.I.D.Z. Roquel, K.D.S. Yu, A.M. Fillone, <strong>K.J.C. Lucas</strong> · Transportation Research Procedia 82 · 2025</div>
+        </li>
+        <li>
+          <div class="pub-t">What if Metro Manila developed a comprehensive rail transit network?</div>
+          <div class="pub-m">J.R.F. Regidor, D.S. Aloc, A.M. Fillone, <strong>K.J.C. Lucas</strong> · Proceedings of the Eastern Asia Society for Transportation Studies (EASTS), vol. 11 · 2017 · <span class="cite">9 citations</span></div>
+        </li>
+        <li>
+          <div class="pub-t">Metro Manila transportation network: big data analytics and applications</div>
+          <div class="pub-m">A. Fillone, E. Dadios, N. Roxas, M. Era, <strong>K. Lucas</strong>, R. Abad, K. Roquel · Sustainable Mobility Research Unit · 2020 · <span class="cite">2 citations</span></div>
+        </li>
+        <li>
+          <div class="pub-t">GIS for better public transportation and transit</div>
+          <div class="pub-m">M.C. Paringit, <strong>K.J. Lucas</strong>, M. Cutora · De La Salle University Research Congress, Manila · 2019 · <span class="cite">1 citation</span></div>
+        </li>
+        <li>
+          <div class="pub-t">Proposed improvement of the public transport service routes in Northern Iloilo, Region VI, Philippines</div>
+          <div class="pub-m">A.A. Angela, K.K.L. de Guzman, R.D.M. Sales, J.T.C. Tan, <strong>K.J.C. Lucas</strong>, et al. · De La Salle University</div>
+        </li>
+        <li>
+          <div class="pub-t">Impact assessment of traffic management measures in the vicinity of De La Salle University-Manila</div>
+          <div class="pub-m">D.C. Carpio, A.M. Fillone, J.C.S. Chua, <strong>K.J.C. Lucas</strong> · De La Salle University</div>
+        </li>
+      </ul>
     </section>
 
     <section id="other">
