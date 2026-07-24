@@ -1,5 +1,47 @@
-<title>Kervin Joshua Lucas · Research</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kervin Joshua Lucas · Trustworthy AI for Travel Behavior</title>
+<meta name="description" content="PhD candidate at KAIST's Cho Chun Shik Graduate School of Mobility studying trustworthy AI for travel behavior: activity-based demand models, LLM-powered activity scheduling, and verifier soundness for official travel data.">
+<meta name="author" content="Kervin Joshua Lucas">
+<link rel="canonical" href="https://curve108.github.io/">
+<meta name="theme-color" content="#FBFCFB" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#121715" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23127353'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='36' font-weight='bold' fill='white' text-anchor='middle'%3EK%3C/text%3E%3C/svg%3E">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Kervin Joshua Lucas · Trustworthy AI for Travel Behavior">
+<meta property="og:description" content="PhD candidate at KAIST studying activity-based travel demand models, LLM-powered activity scheduling, and verifier soundness for official travel data.">
+<meta property="og:url" content="https://curve108.github.io/">
+<meta property="og:image" content="https://curve108.github.io/assets/me.jpg">
+<meta name="twitter:card" content="summary">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Kervin Joshua Lucas",
+  "jobTitle": "PhD Candidate",
+  "url": "https://curve108.github.io/",
+  "image": "https://curve108.github.io/assets/me.jpg",
+  "email": "mailto:lucaskerv@kaist.ac.kr",
+  "affiliation": {
+    "@type": "CollegeOrUniversity",
+    "name": "Korea Advanced Institute of Science and Technology (KAIST)",
+    "department": "Cho Chun Shik Graduate School of Mobility"
+  },
+  "alumniOf": {
+    "@type": "CollegeOrUniversity",
+    "name": "De La Salle University"
+  },
+  "knowsAbout": ["Activity-based travel demand models", "Large language models", "Verifier soundness", "Transportation planning"],
+  "sameAs": [
+    "https://scholar.google.com/citations?user=8FfIVzIAAAAJ",
+    "https://github.com/Curve108",
+    "https://www.linkedin.com/in/kervin-joshua-lucas-92169610b/"
+  ]
+}
+</script>
 <style>
   :root {
     --paper: #FBFCFB;
@@ -36,8 +78,9 @@
   }
 
   * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; color-scheme: light dark; }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  ::selection { background: var(--accent-soft); color: var(--ink); }
   body {
     margin: 0; background: var(--paper); color: var(--ink);
     font-family: var(--sans); font-size: 16.5px; line-height: 1.68;
@@ -68,7 +111,8 @@
     margin: 0 0 0.5rem; font-weight: 600; letter-spacing: -0.01em; text-wrap: balance;
   }
   .role { color: var(--accent); font-weight: 600; font-size: 0.92rem; margin: 0 0 0.9rem; }
-  .affil { color: var(--muted); font-size: 0.86rem; line-height: 1.55; margin: 0 0 1.2rem; }
+  .affil { color: var(--muted); font-size: 0.86rem; line-height: 1.55; margin: 0 0 0.9rem; }
+  .email { font-family: var(--mono); font-size: 0.78rem; margin: 0 0 1.2rem; }
   .focus { font-size: 0.84rem; color: var(--ink); line-height: 1.5; margin: 0 0 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
   .focus-label { display: block; font-family: var(--mono); font-size: 0.67rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
 
@@ -85,9 +129,17 @@
 
   .side nav { border-top: 1px solid var(--line); padding-top: 1.1rem; }
   .side nav a {
-    display: block; color: var(--muted); font-size: 0.9rem; padding: 0.28rem 0;
+    display: block; position: relative; color: var(--muted); font-size: 0.9rem;
+    padding: 0.28rem 0 0.28rem 0.95rem;
+  }
+  .side nav a::before {
+    content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%);
+    width: 5px; height: 5px; border-radius: 50%; background: transparent;
+    transition: background .15s ease;
   }
   .side nav a:hover { color: var(--accent); text-decoration: none; }
+  .side nav a[aria-current="true"] { color: var(--accent); font-weight: 600; }
+  .side nav a[aria-current="true"]::before { background: var(--accent); }
 
   /* ---------- right: content ---------- */
   .main { min-width: 0; }
@@ -132,6 +184,16 @@
     display: grid; grid-template-columns: 84px 1fr; gap: 1.3rem;
     padding: 1.6rem; border: 1px solid var(--line); border-radius: 12px;
     background: var(--card); margin-bottom: 1.1rem;
+    transition: border-color .18s ease, box-shadow .18s ease;
+  }
+  article.pub:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, var(--line));
+    box-shadow: 0 2px 12px rgba(18, 40, 30, 0.06);
+  }
+  @media (prefers-reduced-motion: reduce) { article.pub { transition: none; } }
+  .stage {
+    font-family: var(--mono); font-size: 0.66rem; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 0.35rem;
   }
   .thumb {
     width: 84px; height: 84px; border-radius: 9px; overflow: hidden;
@@ -212,6 +274,8 @@
     .shell { grid-template-columns: 1fr; gap: 2.6rem; padding-top: 2.5rem; }
     .side { position: static; }
     .side nav { display: flex; flex-wrap: wrap; gap: 0.2rem 1.3rem; }
+    .side nav a { padding-left: 0; }
+    .side nav a::before { display: none; }
     .avatar { margin-bottom: 1rem; }
     .figrow { grid-template-columns: 1fr; }
   }
@@ -220,7 +284,28 @@
     .thumb { width: 72px; height: 72px; }
     .news li { gap: 0.9rem; }
   }
+
+  /* print: a clean CV-like output from Ctrl+P */
+  @media print {
+    :root {
+      --paper: #fff; --panel: #fff; --ink: #111; --muted: #444; --faint: #666;
+      --line: #ccc; --accent: #0a5540; --accent-soft: #fff; --flag: #8a2d23;
+      --flag-soft: #fff; --card: #fff;
+    }
+    body { font-size: 10.5pt; }
+    .shell { display: block; max-width: none; padding: 0; }
+    .side { position: static; margin-bottom: 1.2rem; }
+    .side nav, .social, .kmg-mark, .embed, #other { display: none; }
+    .avatar { width: 72px; height: 72px; }
+    article.pub { break-inside: avoid; border: none; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0.8rem 0; box-shadow: none; }
+    .thumb, figure { display: none; }
+    section { margin-bottom: 1.6rem; }
+    a { color: inherit; text-decoration: none; }
+    details.more { display: none; }
+  }
 </style>
+</head>
+<body>
 
 <div class="shell">
 
@@ -230,6 +315,7 @@
     <p class="role">PhD Candidate · Trustworthy AI for Mobility</p>
     <p class="affil">Cho Chun Shik Graduate School of Mobility, KAIST · Daejeon, South Korea<br>
     KAIST Mobility Group · Advisor: Prof. Inhi Kim</p>
+    <p class="email"><a href="mailto:lucaskerv@kaist.ac.kr">lucaskerv@kaist.ac.kr</a></p>
 
     <div class="kmg-mark"><img src="assets/logos/kmg_logo.png" alt="KAIST Mobility Group (IMPACTs)"></div>
 
@@ -325,12 +411,12 @@
           </svg>
         </div>
         <div>
+          <p class="stage">Measure</p>
           <h3>An Evidence-Based Review of AI-Enhanced Activity-Based Models: Trade-offs Between Interpretability, Fidelity, and Efficiency</h3>
           <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
           <p class="venue">Int. J. of Urban Sciences <span class="status">· revision under review</span></p>
           <p class="tldr"><strong>42 scored studies, one map:</strong> AI travel models pile up on predictive
           fidelity, while behavioral interpretability and computational efficiency go chronically unmeasured.</p>
-          <p class="res"><a href="#">preprint</a> · <a href="#">scoring data</a></p>
           <details class="more">
             <summary>Abstract &amp; key numbers</summary>
             <p>Progress in AI-enhanced activity-based travel models is constrained by an under-articulated
@@ -361,6 +447,7 @@
           </svg>
         </div>
         <div>
+          <p class="stage">Diagnose · Construct</p>
           <h3>Two manuscripts under double-blind review</h3>
           <p class="authors">Titles &amp; authors withheld during blind review</p>
           <p class="venue warm">Under review <span class="status">· double-blind venue</span></p>
@@ -383,12 +470,12 @@
           </svg>
         </div>
         <div>
+          <p class="stage">Apply</p>
           <h3>Auditing Verifiers, Prompts, and Transport Statistics in LLM Travel-Diary Repair</h3>
           <p class="authors">Kervin Joshua Lucas, Tengfeng Lin, Inhi Kim</p>
           <p class="venue">Transportation Research Part C <span class="status">· in preparation</span></p>
           <p class="tldr"><strong>Passing checks ≠ recovering truth:</strong> LLMs resolved up to 86% of flags in
           two national travel surveys but restored the known true value in barely a third of cases.</p>
-          <p class="res"><a href="#">protocol</a> · <a href="#">data deposit</a></p>
           <details class="more">
             <summary>Abstract &amp; key numbers</summary>
             <p>Auditing the Daejeon subset of Korea's 2021 National Travel Survey and Australia's VISTA
@@ -420,6 +507,7 @@
           </svg>
         </div>
         <div>
+          <p class="stage">Govern</p>
           <h3>Verification Governance for Generative AI in Official Travel Data</h3>
           <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
           <p class="venue">Transportation Research Part A: Policy and Practice <span class="status">· VSI on Generative AI · planned</span></p>
@@ -448,7 +536,7 @@
         <table>
           <thead><tr><th>Ch.</th><th>Stage</th><th>Focus</th><th>Status</th></tr></thead>
           <tbody>
-            <tr><td class="ch">2</td><td>Measure</td><td>The interpretability, fidelity, and efficiency trilemma</td><td class="st">IJUS review, R1 in review</td></tr>
+            <tr><td class="ch">2</td><td>Measure</td><td>The interpretability, fidelity, and efficiency trilemma</td><td class="st">IJUS, R1 under review</td></tr>
             <tr><td class="ch">3</td><td>Diagnose</td><td>How unsound verifiers corrupt LLM repair</td><td class="st">manuscript, in review</td></tr>
             <tr><td class="ch">4</td><td>Construct</td><td>Provably sound verification</td><td class="st">manuscript, in review</td></tr>
             <tr><td class="ch">5</td><td>Apply</td><td>LLM-Modulo repair of survey diaries</td><td class="st">TRC, in preparation</td></tr>
@@ -599,9 +687,33 @@
     </section>
 
     <footer class="site">
-      Kervin Joshua Lucas · KAIST · Supported in part by MOLIT (Korea) grant RS-2022-00141102.<br>
-      Draft page. Links and repositories to be added before publication.
+      © 2026 Kervin Joshua Lucas · Supported in part by MOLIT (Korea) grant RS-2022-00141102.<br>
+      Single static page, no trackers. Updated July 2026.
     </footer>
 
   </main>
 </div>
+
+<script>
+(function () {
+  var links = document.querySelectorAll('.side nav a[href^="#"]');
+  var map = new Map();
+  links.forEach(function (a) {
+    var s = document.querySelector(a.getAttribute('href'));
+    if (s) map.set(s, a);
+  });
+  if (!('IntersectionObserver' in window) || map.size === 0) return;
+  var current = null;
+  var obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      if (current) current.removeAttribute('aria-current');
+      current = map.get(e.target);
+      if (current) current.setAttribute('aria-current', 'true');
+    });
+  }, { rootMargin: '-15% 0px -70% 0px' });
+  map.forEach(function (_, s) { obs.observe(s); });
+})();
+</script>
+</body>
+</html>
