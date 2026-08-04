@@ -359,13 +359,13 @@
       <p class="lead">The constructive half of the work builds automated checks that flag only what the
       data can actually prove, not artifacts of how it was measured, so repair and generation loops are
       never asked to fix what the data cannot show is broken. Five connected studies carry this arc from
-      measurement to guarantee, and my dissertation extends it from repairing observed travel diaries to
+      measurement to policy use, and my dissertation extends it from repairing observed travel diaries to
       generating certified daily activity schedules, the core representation behind activity-based travel
       demand models.</p>
       <ul class="headline-stats">
-        <li><span class="n">5 papers</span><span class="l">one connected arc: measure → diagnose → construct → apply → generate</span></li>
+        <li><span class="n">5 papers</span><span class="l">one connected arc: measure → diagnose → construct → apply → stress-test</span></li>
         <li><span class="n">961 → 42</span><span class="l">studies screened into an evidence-scored map of AI travel models</span></li>
-        <li><span class="n">32–37%</span><span class="l">how often LLM "repairs" restore the known true value, despite passing automated checks</span></li>
+        <li><span class="n">10,592</span><span class="l">person-day activity chains in the NHTS 2022 corpus prepared for the dissertation's scheduler</span></li>
       </ul>
       <div class="figrow">
         <figure>
@@ -382,9 +382,9 @@
     <section id="news">
       <h2>News</h2>
       <ul class="news">
+        <li><time datetime="2026-08">Aug 2026</time><span>A third manuscript, on automated quality control in household travel surveys, is in preparation for <strong>anonymized journal review</strong>.</span></li>
         <li><time datetime="2026-07">Jul 2026</time><span>Two manuscripts on verification soundness for LLM data repair entered <strong>double-blind peer review</strong>. Details will appear here after notification.</span></li>
         <li><time datetime="2026-07">Jul 2026</time><span>Revised manuscript of the AI-ABM trilemma review resubmitted to the <strong>International Journal of Urban Sciences</strong>.</span></li>
-        <li><time datetime="2026-07">Jul 2026</time><span>Full audit of LLM travel-diary repair in preparation for <strong>Transportation Research Part C</strong>.</span></li>
       </ul>
     </section>
 
@@ -447,50 +447,15 @@
           </svg>
         </div>
         <div>
-          <p class="stage">Diagnose · Construct</p>
-          <h3>Two manuscripts under double-blind review</h3>
-          <p class="authors">Titles &amp; authors withheld during blind review</p>
-          <p class="venue warm">Under review <span class="status">· double-blind venue</span></p>
-          <p class="tldr"><strong>The diagnostic and constructive core of the arc:</strong> one paper shows that
-          verifier-grounded LLM repair complies with flawed automated checks; the other builds checks that
-          flag only what the data can prove. Titles, venue, and results are withheld here until notification
-          (expected late 2026), then listed in full.</p>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="thumb" aria-hidden="true">
-          <svg viewBox="0 0 96 96">
-            <line x1="14" y1="78" x2="82" y2="78" stroke="var(--line)" stroke-width="1.5"/>
-            <rect x="20" y="30" width="12" height="48" fill="var(--accent)" opacity="0.85"/>
-            <rect x="38" y="46" width="12" height="32" fill="var(--accent)" opacity="0.55"/>
-            <rect x="60" y="66" width="12" height="12" fill="var(--flag)"/>
-            <path d="M52 40 q9 -7 16 14" fill="none" stroke="var(--flag)" stroke-width="1.5" stroke-dasharray="3 3"/>
-            <path d="M68 52 l0 4 -3.2 -2.2 z" fill="var(--flag)"/>
-          </svg>
-        </div>
-        <div>
-          <p class="stage">Apply</p>
-          <h3>Auditing Verifiers, Prompts, and Transport Statistics in LLM Travel-Diary Repair</h3>
-          <p class="authors">Kervin Joshua Lucas, Tengfeng Lin, Inhi Kim</p>
-          <p class="venue">Transportation Research Part C <span class="status">· in preparation</span></p>
-          <p class="tldr"><strong>Passing checks ≠ recovering truth:</strong> LLMs resolved up to 86% of flags in
-          two national travel surveys but restored the known true value in barely a third of cases.</p>
-          <details class="more">
-            <summary>Abstract &amp; key numbers</summary>
-            <p>Auditing the Daejeon subset of Korea's 2021 National Travel Survey and Australia's VISTA
-            FY2022/23, this study separates verifier compliance, truth recovery, and preservation of
-            population transport statistics, three things usually conflated. Unsupported verifier rules, not
-            real data errors, decided which records were sent for repair; repaired pipelines cut observed
-            walk share by 8.4 to 14.4 percentage points; and evidence-qualified screening found zero cases where
-            released fields could establish an automatic replacement. The contribution is a protocol that
-            separates review from rewriting and evaluates population effects under the official survey design.</p>
-            <ul class="stats">
-              <li><span class="n">78.6–85.9%</span><span class="l">of injected flags "resolved" by LLM repair…</span></li>
-              <li class="flagged"><span class="n">32.1–37.4%</span><span class="l">…but the known true value restored in only a third</span></li>
-              <li><span class="n">0 eligible</span><span class="l">auto-repair cases among 8,940 assessable respondents</span></li>
-            </ul>
-          </details>
+          <p class="stage">Diagnose · Construct · Apply</p>
+          <h3>Three manuscripts, details withheld</h3>
+          <p class="authors">Titles, venues, and results withheld during anonymized review</p>
+          <p class="venue warm">Two under anonymized review, one in preparation</p>
+          <p class="tldr"><strong>The diagnostic, constructive, and applied core of the arc:</strong> one paper
+          shows that verifier-grounded LLM repair complies with flawed automated checks; one builds checks that
+          flag only what the data can prove; one asks whether an automated edit that satisfies a data checker has
+          actually corrected the record. Each is listed in full once its venue reaches a decision, the first two
+          expected late 2026.</p>
         </div>
       </article>
 
@@ -507,19 +472,18 @@
           </svg>
         </div>
         <div>
-          <p class="stage">Govern</p>
-          <h3>Verification Governance for Generative AI in Official Travel Data</h3>
+          <p class="stage">Stress-test</p>
+          <h3>Can LLM Activity Schedulers Be Trusted for Transport Policy Counterfactuals?</h3>
           <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
-          <p class="venue">Transportation Research Part A: Policy and Practice <span class="status">· VSI on Generative AI · planned</span></p>
-          <p class="tldr"><strong>Who audits the algorithm that audits the data?</strong> A governance framework
-          and agency-facing checklist for generative AI entering official statistics pipelines.</p>
+          <p class="venue">Transportation Research Part A: Policy and Practice <span class="status">· special issue on generative AI · planned</span></p>
+          <p class="tldr"><strong>Can a generated schedule carry a policy conclusion?</strong> Whether LLM
+          activity schedulers are trustworthy enough to answer counterfactual policy questions, building on
+          the verifier-soundness line in the work above.</p>
           <details class="more">
             <summary>Scope</summary>
-            <p>The policy companion to the technical arc. GenAI data tools are entering the layer that feeds
-            mode-share statistics, demand models, and investment cases; the documented failure is
-            sociotechnical. A "verified" label transferred institutional trust to broken output while no
-            actor owned data-defect liability. Proposes provenance requirements, verifier auditing, soundness
-            standards, and procurement language for transport agencies.</p>
+            <p>Extends the verified-LLM thread of the papers above from repairing observed travel records to
+            generating the schedules a policy question would be asked of. Planned for the special issue on
+            generative AI in transport policy and applications, and currently at the scoping stage.</p>
           </details>
         </div>
       </article>
@@ -539,7 +503,7 @@
             <tr><td class="ch">2</td><td>Measure</td><td>The interpretability, fidelity, and efficiency trilemma</td><td class="st">IJUS, R1 under review</td></tr>
             <tr><td class="ch">3</td><td>Diagnose</td><td>How unsound verifiers corrupt LLM repair</td><td class="st">manuscript, in review</td></tr>
             <tr><td class="ch">4</td><td>Construct</td><td>Provably sound verification</td><td class="st">manuscript, in review</td></tr>
-            <tr><td class="ch">5</td><td>Apply</td><td>LLM-Modulo repair of survey diaries</td><td class="st">TRC, in preparation</td></tr>
+            <tr><td class="ch">5</td><td>Apply</td><td>Automated editing of survey travel diaries</td><td class="st">manuscript, in preparation</td></tr>
             <tr><td class="ch">6</td><td>Generate</td><td>Verifier-certified activity scheduler (NHTS 2022)</td><td class="st">new core work, designed</td></tr>
           </tbody>
         </table>
@@ -688,7 +652,7 @@
 
     <footer class="site">
       © 2026 Kervin Joshua Lucas · Supported in part by MOLIT (Korea) grant RS-2022-00141102.<br>
-      Single static page, no trackers. Updated July 2026.
+      Single static page, no trackers. Updated August 2026.
     </footer>
 
   </main>
