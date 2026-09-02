@@ -79,6 +79,12 @@
 
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; color-scheme: light dark; }
+  .skip {
+    position: absolute; left: -999px; top: 0; z-index: 10;
+    background: var(--accent); color: #fff; padding: 0.5rem 0.9rem;
+    border-radius: 0 0 8px 0; font-size: 0.9rem;
+  }
+  .skip:focus { left: 0; text-decoration: none; outline: 2px solid var(--ink); }
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
   ::selection { background: var(--accent-soft); color: var(--ink); }
   body {
@@ -295,7 +301,7 @@
     body { font-size: 10.5pt; }
     .shell { display: block; max-width: none; padding: 0; }
     .side { position: static; margin-bottom: 1.2rem; }
-    .side nav, .social, .kmg-mark, .embed, #other { display: none; }
+    .side nav, .social, .kmg-mark, .embed, #other, .skip { display: none; }
     .avatar { width: 72px; height: 72px; }
     article.pub { break-inside: avoid; border: none; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0.8rem 0; box-shadow: none; }
     .thumb, figure { display: none; }
@@ -307,17 +313,18 @@
 </head>
 <body>
 
+<a class="skip" href="#content">Skip to content</a>
 <div class="shell">
 
   <aside class="side">
-    <img class="avatar" src="assets/me.jpg" alt="Kervin Joshua Lucas">
+    <img class="avatar" src="assets/me.jpg" width="440" height="440" alt="Kervin Joshua Lucas">
     <h1>Kervin Joshua Lucas</h1>
     <p class="role">PhD Candidate · Trustworthy AI for Mobility</p>
     <p class="affil">Cho Chun Shik Graduate School of Mobility, KAIST · Daejeon, South Korea<br>
     KAIST Mobility Group · Advisor: Prof. Inhi Kim</p>
     <p class="email"><a href="mailto:lucaskerv@kaist.ac.kr">lucaskerv@kaist.ac.kr</a></p>
 
-    <div class="kmg-mark"><img src="assets/logos/kmg_logo.png" alt="KAIST Mobility Group (IMPACTs)"></div>
+    <div class="kmg-mark"><img src="assets/logos/kmg_logo.png" width="558" height="284" alt="KAIST Mobility Group (IMPACTs)"></div>
 
     <div class="focus"><span class="focus-label">Research</span>
     Activity-based travel demand models · LLM-powered activity scheduling · verifier soundness for data pipelines</div>
@@ -327,11 +334,11 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></a></li>
       <li><a href="https://kaistmobilitygroup.com" title="KAIST Mobility Group" aria-label="KAIST Mobility Group">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></a></li>
-      <li><a href="https://scholar.google.com/citations?user=8FfIVzIAAAAJ" title="Google Scholar" aria-label="Google Scholar">
+      <li><a href="https://scholar.google.com/citations?user=8FfIVzIAAAAJ" rel="me" title="Google Scholar" aria-label="Google Scholar">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z" opacity="0.55"/></svg></a></li>
-      <li><a href="https://github.com/Curve108" title="GitHub" aria-label="GitHub">
+      <li><a href="https://github.com/Curve108" rel="me" title="GitHub" aria-label="GitHub">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a></li>
-      <li><a href="https://www.linkedin.com/in/kervin-joshua-lucas-92169610b/" title="LinkedIn" aria-label="LinkedIn">
+      <li><a href="https://www.linkedin.com/in/kervin-joshua-lucas-92169610b/" rel="me" title="LinkedIn" aria-label="LinkedIn">
         <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></li>
     </ul>
 
@@ -347,7 +354,7 @@
     </nav>
   </aside>
 
-  <main class="main">
+  <main class="main" id="content">
 
     <section id="about">
       <h2>About</h2>
@@ -369,11 +376,11 @@
       </ul>
       <div class="figrow">
         <figure>
-          <img src="assets/daejeon_temporal_rhythm.png" loading="lazy" alt="Smooth kernel-density curves of activity start times by trip purpose for Daejeon 2021, with home, work, and school peaks">
+          <img src="assets/daejeon_temporal_rhythm.png" width="3570" height="1770" loading="lazy" alt="Smooth kernel-density curves of activity start times by trip purpose for Daejeon 2021, with home, work, and school peaks">
           <figcaption>When a city travels: activity start times by purpose (Daejeon 2021).</figcaption>
         </figure>
         <figure>
-          <img src="assets/daejeon_visum_network.png" loading="lazy" alt="PTV Visum view of Daejeon's zone system with assigned demand shown as red flow bands over the road network">
+          <img src="assets/daejeon_visum_network.png" width="858" height="626" loading="lazy" alt="PTV Visum view of Daejeon's zone system with assigned demand shown as red flow bands over the road network">
           <figcaption>Where it travels: Daejeon zones and demand in PTV Visum.</figcaption>
         </figure>
       </div>
@@ -382,7 +389,7 @@
     <section id="news">
       <h2>News</h2>
       <ul class="news">
-        <li><time datetime="2026-08">Aug 2026</time><span>A third manuscript, on automated quality control in household travel surveys, is in preparation for <strong>anonymized journal review</strong>.</span></li>
+        <li><time datetime="2026-08">Aug 2026</time><span>A third manuscript, on automated quality control in household travel surveys, is being prepared for <strong>journal submission</strong>. Title and venue will appear here after the journal's decision.</span></li>
         <li><time datetime="2026-07">Jul 2026</time><span>Two manuscripts on verification soundness for LLM data repair entered <strong>double-blind peer review</strong>. Details will appear here after notification.</span></li>
         <li><time datetime="2026-07">Jul 2026</time><span>Revised manuscript of the AI-ABM trilemma review resubmitted to the <strong>International Journal of Urban Sciences</strong>.</span></li>
       </ul>
@@ -392,7 +399,7 @@
       <h2>Research</h2>
 
       <figure>
-        <img src="assets/trilemma_map.png" loading="lazy" alt="Ternary plot mapping AI travel models across interpretability, fidelity, and efficiency, colored by model family">
+        <img src="assets/trilemma_map.png" width="1770" height="1192" loading="lazy" alt="Ternary plot mapping AI travel models across interpretability, fidelity, and efficiency, colored by model family">
         <figcaption>The interpretability, fidelity, and efficiency map: 42 AI-enhanced activity-based models scored on three axes (from the review below). Most cluster toward fidelity.</figcaption>
       </figure>
 
@@ -421,13 +428,14 @@
             <summary>Abstract &amp; key numbers</summary>
             <p>Progress in AI-enhanced activity-based travel models is constrained by an under-articulated
             three-way trade-off among behavioral interpretability, predictive fidelity, and computational
-            efficiency. From a structured review (961 records screened to 42 core studies from 2001 to 2025), every
-            study is scored on falsifiable indicators and mapped into a normalized trilemma space
-            (I + F + E = 20) with a strict-Pareto frontier. Quality is use-case-dependent: progress reads as
-            movement within target regions, not toward a universal optimum.</p>
+            efficiency. From a structured review (961 records screened to 42 core studies), every study is
+            scored on falsifiable indicators and placed on a constant-sum trilemma map (I + F + E = 20), a
+            visualization device whose headline pattern holds under three alternative normalizations. Quality
+            is use-case-dependent: progress reads as movement within target regions, not toward a universal
+            optimum.</p>
             <ul class="stats">
               <li><span class="n">961 → 42</span><span class="l">screening funnel to core scored studies</span></li>
-              <li><span class="n">I + F + E = 20</span><span class="l">constant-sum trilemma space, Pareto frontier</span></li>
+              <li><span class="n">I + F + E = 20</span><span class="l">constant-sum trilemma map; pattern robust to three alternative normalizations</span></li>
             </ul>
           </details>
         </div>
@@ -449,7 +457,7 @@
         <div>
           <p class="stage">Diagnose · Construct · Apply</p>
           <h3>Three manuscripts, details withheld</h3>
-          <p class="authors">Titles, venues, and results withheld during anonymized review</p>
+          <p class="authors">Titles, venues, and results withheld until each venue reaches a decision</p>
           <p class="venue warm">Two under anonymized review, one in preparation</p>
           <p class="tldr"><strong>The diagnostic, constructive, and applied core of the arc:</strong> one paper
           shows that verifier-grounded LLM repair complies with flawed automated checks; one builds checks that
@@ -652,7 +660,7 @@
 
     <footer class="site">
       © 2026 Kervin Joshua Lucas · Supported in part by MOLIT (Korea) grant RS-2022-00141102.<br>
-      Single static page, no trackers. Updated August 2026.
+      Single static page, no trackers. Updated September 2026.
     </footer>
 
   </main>
