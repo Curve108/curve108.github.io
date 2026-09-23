@@ -16,6 +16,7 @@
 <meta property="og:url" content="https://curve108.github.io/">
 <meta property="og:image" content="https://curve108.github.io/assets/me.jpg">
 <meta name="twitter:card" content="summary">
+<script>try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}</script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -122,16 +123,25 @@
   .focus { font-size: 0.84rem; color: var(--ink); line-height: 1.5; margin: 0 0 1.4rem; padding-top: 1.1rem; border-top: 1px solid var(--line); }
   .focus-label { display: block; font-family: var(--mono); font-size: 0.67rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.4rem; }
 
-  .social { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0 0 1.6rem; padding: 0; list-style: none; }
-  .social a {
-    width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center;
+  .social { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0 0 1.6rem; padding: 0; list-style: none; }
+  .social a, .social button {
+    width: 36px; height: 36px; border-radius: 50%; display: grid; place-items: center;
     border: 1px solid var(--line); background: var(--card); color: var(--muted);
     transition: color .15s ease, border-color .15s ease, background .15s ease;
   }
-  .social a:hover, .social a:focus-visible {
+  .social button { padding: 0; font: inherit; cursor: pointer; }
+  .social button[hidden] { display: none; }
+  .social a:hover, .social a:focus-visible, .social button:hover, .social button:focus-visible {
     color: var(--accent); border-color: var(--accent); background: var(--accent-soft); text-decoration: none;
   }
+  .social button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
   .social svg { width: 18px; height: 18px; display: block; }
+  .theme-toggle .i-sun, .theme-toggle[data-mode="dark"] .i-moon { display: none; }
+  .theme-toggle[data-mode="dark"] .i-sun { display: block; }
+  .sr-only {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+  }
 
   .side nav { border-top: 1px solid var(--line); padding-top: 1.1rem; }
   .side nav a {
@@ -245,6 +255,7 @@
 
   /* figures */
   figure { margin: 1.5rem 0; }
+  figure picture { display: block; }
   figure img { display: block; width: auto; max-width: 100%; max-height: 280px; height: auto; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
   figcaption { font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin-top: 0.5rem; text-align: center; }
   .figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 1.5rem 0; align-items: end; }
@@ -257,7 +268,7 @@
   ul.cv li { display: flex; gap: 0.9rem; align-items: flex-start; padding: 0.85rem 0; border-bottom: 1px solid var(--line); }
   ul.cv li:last-child { border-bottom: none; }
   .cv-logo { flex: none; width: 42px; height: 42px; border-radius: 9px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; padding: 5px; }
-  .cv-logo img { max-width: 100%; max-height: 100%; display: block; }
+  .cv-logo img { max-width: 100%; max-height: 100%; height: auto; display: block; }
   .cv-body { flex: 1 1 auto; min-width: 0; }
   .kmg-mark { display: inline-flex; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; margin: 0 0 1.2rem; }
   .kmg-mark img { height: 20px; width: auto; display: block; }
@@ -284,6 +295,7 @@
     .side nav a::before { display: none; }
     .avatar { margin-bottom: 1rem; }
     .figrow { grid-template-columns: 1fr; }
+    td.st { white-space: normal; min-width: 6.5rem; }
   }
   @media (max-width: 480px) {
     article.pub { grid-template-columns: 1fr; }
@@ -301,7 +313,7 @@
     body { font-size: 10.5pt; }
     .shell { display: block; max-width: none; padding: 0; }
     .side { position: static; margin-bottom: 1.2rem; }
-    .side nav, .social, .kmg-mark, .embed, #other, .skip { display: none; }
+    .side nav, .social, .kmg-mark, .embed, #other, .skip, .theme-toggle { display: none; }
     .avatar { width: 72px; height: 72px; }
     article.pub { break-inside: avoid; border: none; border-bottom: 1px solid var(--line); border-radius: 0; padding: 0.8rem 0; box-shadow: none; }
     .thumb, figure { display: none; }
@@ -331,15 +343,18 @@
 
     <ul class="social">
       <li><a href="mailto:lucaskerv@kaist.ac.kr" title="Email" aria-label="Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></a></li>
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg></a></li>
       <li><a href="https://kaistmobilitygroup.com" title="KAIST Mobility Group" aria-label="KAIST Mobility Group">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></a></li>
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 2.5 15 0 18M12 3c-2.5 2.5-2.5 15 0 18"/></svg></a></li>
       <li><a href="https://scholar.google.com/citations?user=8FfIVzIAAAAJ" rel="me" title="Google Scholar" aria-label="Google Scholar">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z" opacity="0.55"/></svg></a></li>
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3 1 9l11 6 9-4.9V17h2V9L12 3z"/><path d="M5 13.2V17c0 1.7 3.1 3 7 3s7-1.3 7-3v-3.8l-7 3.8-7-3.8z" opacity="0.55"/></svg></a></li>
       <li><a href="https://github.com/Curve108" rel="me" title="GitHub" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a></li>
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2c-3.2.7-3.9-1.5-3.9-1.5-.5-1.3-1.3-1.7-1.3-1.7-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.5-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.3 1.2a11.5 11.5 0 0 1 6 0C17 4.7 18 5 18 5c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z"/></svg></a></li>
       <li><a href="https://www.linkedin.com/in/kervin-joshua-lucas-92169610b/" rel="me" title="LinkedIn" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></li>
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.03-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg></a></li>
+      <li><button type="button" class="theme-toggle" hidden title="Switch theme" aria-label="Switch theme">
+        <svg class="i-moon" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z"/></svg>
+        <svg class="i-sun" aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2.5v2M12 19.5v2M2.5 12h2M19.5 12h2M5.3 5.3l1.4 1.4M17.3 17.3l1.4 1.4M5.3 18.7l1.4-1.4M17.3 6.7l1.4-1.4"/></svg></button></li>
     </ul>
 
     <nav aria-label="Sections">
@@ -365,22 +380,28 @@
       result carries a <em>verified</em> label it did not earn.</p>
       <p class="lead">The constructive half of the work builds automated checks that flag only what the
       data can actually prove, not artifacts of how it was measured, so repair and generation loops are
-      never asked to fix what the data cannot show is broken. Five connected studies carry this arc from
-      measurement to policy use, and my dissertation extends it from repairing observed travel diaries to
-      generating certified daily activity schedules, the core representation behind activity-based travel
-      demand models.</p>
+      never asked to fix what the data cannot show is broken. Five connected studies carry this line of work
+      from measurement to policy use. My dissertation asks what a sound check actually changes as the LLM
+      moves from repairing observed travel diaries to generating daily activity schedules, the core
+      representation behind activity-based travel demand models.</p>
       <ul class="headline-stats">
-        <li><span class="n">5 papers</span><span class="l">one connected arc: measure → diagnose → construct → apply → stress-test</span></li>
+        <li><span class="n">5 papers</span><span class="l">one connected line of work, from measuring the field's trade-offs to policy use</span></li>
         <li><span class="n">961 → 42</span><span class="l">studies screened into an evidence-scored map of AI travel models</span></li>
-        <li><span class="n">10,592</span><span class="l">person-day activity chains in the NHTS 2022 corpus prepared for the dissertation's scheduler</span></li>
+        <li><span class="n">16,997</span><span class="l">person-days from the 2022 US National Household Travel Survey in the activity scheduler's input table</span></li>
       </ul>
       <div class="figrow">
         <figure>
-          <img src="assets/daejeon_temporal_rhythm.png" width="3570" height="1770" loading="lazy" alt="Smooth kernel-density curves of activity start times by trip purpose for Daejeon 2021, with home, work, and school peaks">
+          <picture>
+            <source type="image/webp" srcset="assets/daejeon_temporal_rhythm.webp">
+            <img src="assets/daejeon_temporal_rhythm.png" width="3570" height="1770" loading="lazy" alt="Smooth kernel-density curves of activity start times by trip purpose for Daejeon 2021, with home, work, and school peaks">
+          </picture>
           <figcaption>When a city travels: activity start times by purpose (Daejeon 2021).</figcaption>
         </figure>
         <figure>
-          <img src="assets/daejeon_visum_network.png" width="858" height="626" loading="lazy" alt="PTV Visum view of Daejeon's zone system with assigned demand shown as red flow bands over the road network">
+          <picture>
+            <source type="image/webp" srcset="assets/daejeon_visum_network.webp">
+            <img src="assets/daejeon_visum_network.png" width="858" height="626" loading="lazy" alt="PTV Visum view of Daejeon's zone system with assigned demand shown as red flow bands over the road network">
+          </picture>
           <figcaption>Where it travels: Daejeon zones and demand in PTV Visum.</figcaption>
         </figure>
       </div>
@@ -399,7 +420,10 @@
       <h2>Research</h2>
 
       <figure>
-        <img src="assets/trilemma_map.png" width="1770" height="1192" loading="lazy" alt="Ternary plot mapping AI travel models across interpretability, fidelity, and efficiency, colored by model family">
+        <picture>
+          <source type="image/webp" srcset="assets/trilemma_map.webp">
+          <img src="assets/trilemma_map.png" width="1770" height="1192" loading="lazy" alt="Ternary plot mapping AI travel models across interpretability, fidelity, and efficiency, colored by model family">
+        </picture>
         <figcaption>The interpretability, fidelity, and efficiency map: 42 AI-enhanced activity-based models scored on three axes (from the review below). Most cluster toward fidelity.</figcaption>
       </figure>
 
@@ -418,7 +442,7 @@
           </svg>
         </div>
         <div>
-          <p class="stage">Measure</p>
+          <p class="stage">Foundations</p>
           <h3>An Evidence-Based Review of AI-Enhanced Activity-Based Models: Trade-offs Between Interpretability, Fidelity, and Efficiency</h3>
           <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
           <p class="venue">Int. J. of Urban Sciences <span class="status">· revision under review</span></p>
@@ -455,11 +479,11 @@
           </svg>
         </div>
         <div>
-          <p class="stage">Diagnose · Construct · Apply</p>
+          <p class="stage">Diagnose · Construct</p>
           <h3>Three manuscripts, details withheld</h3>
           <p class="authors">Titles, venues, and results withheld until each venue reaches a decision</p>
           <p class="venue warm">Two under anonymized review, one in preparation</p>
-          <p class="tldr"><strong>The diagnostic, constructive, and applied core of the arc:</strong> one paper
+          <p class="tldr"><strong>The diagnostic and constructive core of the dissertation:</strong> one paper
           shows that verifier-grounded LLM repair complies with flawed automated checks; one builds checks that
           flag only what the data can prove; one asks whether an automated edit that satisfies a data checker has
           actually corrected the record. Each is listed in full once its venue reaches a decision, the first two
@@ -480,7 +504,7 @@
           </svg>
         </div>
         <div>
-          <p class="stage">Stress-test</p>
+          <p class="stage">Policy use</p>
           <h3>Can LLM Activity Schedulers Be Trusted for Transport Policy Counterfactuals?</h3>
           <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
           <p class="venue">Transportation Research Part A: Policy and Practice <span class="status">· special issue on generative AI · planned</span></p>
@@ -500,30 +524,34 @@
 
     <section id="dissertation">
       <h2>Dissertation</h2>
-      <p class="diss-intro"><strong>LLM-Powered Activity Scheduling with Sound Verifier Guarantees</strong>
-      (working title). Thesis: LLM-in-the-loop pipelines can generate and repair daily activity schedules
-      that are simultaneously interpretable, distributionally faithful, and efficient, <em>provided</em>
-      they are grounded by verifiers that are sound under measurement uncertainty.</p>
+      <p class="diss-intro"><strong>Research question</strong> (working direction). When an LLM pipeline
+      that repairs travel data or generates daily activity schedules is gated by an automated check, what
+      does the check's soundness change? The chapters ask what an unsound check destroys, what a sound one
+      can certify, how it shifts the balance of validity, fidelity, coverage, and cost in generated
+      schedules, and where the pipeline breaks when its assumptions change. A bounded or negative answer is
+      an acceptable result.</p>
       <div class="chapters">
         <table>
-          <thead><tr><th>Ch.</th><th>Stage</th><th>Focus</th><th>Status</th></tr></thead>
+          <caption class="sr-only">Dissertation chapters by stage, focus, and status</caption>
+          <thead><tr><th scope="col">Ch.</th><th scope="col">Stage</th><th scope="col">Focus</th><th scope="col">Status</th></tr></thead>
           <tbody>
-            <tr><td class="ch">2</td><td>Measure</td><td>The interpretability, fidelity, and efficiency trilemma</td><td class="st">IJUS, R1 under review</td></tr>
-            <tr><td class="ch">3</td><td>Diagnose</td><td>How unsound verifiers corrupt LLM repair</td><td class="st">manuscript, in review</td></tr>
+            <tr><td class="ch">2</td><td>Foundations</td><td>The interpretability, fidelity, and efficiency trade-off in AI travel models</td><td class="st">IJUS, R1 under review</td></tr>
+            <tr><td class="ch">3</td><td>Diagnose</td><td>How unsound verifiers corrupt LLM repair; automated editing of survey travel diaries</td><td class="st">in review; in preparation</td></tr>
             <tr><td class="ch">4</td><td>Construct</td><td>Provably sound verification</td><td class="st">manuscript, in review</td></tr>
-            <tr><td class="ch">5</td><td>Apply</td><td>Automated editing of survey travel diaries</td><td class="st">manuscript, in preparation</td></tr>
-            <tr><td class="ch">6</td><td>Generate</td><td>Verifier-certified activity scheduler (NHTS 2022)</td><td class="st">new core work, designed</td></tr>
+            <tr><td class="ch">5</td><td>Apply</td><td>When a check improves an LLM scheduler of a person's day (NHTS 2022)</td><td class="st">in progress, pilot stage</td></tr>
+            <tr><td class="ch">6</td><td>Stress-test</td><td>Where the pipelines break under changed assumptions, missing inputs, and intervention prompts</td><td class="st">planned</td></tr>
           </tbody>
         </table>
       </div>
       <details class="more">
-        <summary>Chapter 6 design</summary>
-        <p>Chapter 6 generalizes the repair loop into a <em>generation</em> loop: an LLM proposes a full-day
-        activity schedule for a persona, a sound scheduler-verifier audits it, provable violations return as
-        structured critiques, and the loop accepts only at zero provable violations, with every accepted
-        schedule carrying a constraint certificate. Built on the NHTS 2022 NextGen survey (10,592 person-day chains,
-        31,074 trips), evaluated on the Chapter 2 trilemma axes against transformer, Markov, and rule-based
-        baselines.</p>
+        <summary>Chapter 5 design</summary>
+        <p>An LLM proposes a full-day activity schedule from survey-style persona attributes, and a checker
+        audits it in a propose, check, and revise loop. The chapter compares a conventional rule checker
+        with a sound checker built on Chapter 4, and sets both against a conditional deep generative model and
+        simple baselines trained on the same public diaries. It measures schedule validity, fidelity to the
+        observed diaries, acceptance coverage, and cost. A certificate states only that the named rules
+        hold; it makes no claim about behavioral fidelity. Data: the 2022 NextGen National Household Travel
+        Survey, 16,997 person-days and 31,074 trips from 7,893 households.</p>
       </details>
     </section>
 
@@ -619,7 +647,7 @@
           </div>
         </li>
         <li>
-          <span class="cv-logo"><img src="assets/logos/dlsu_logo.png" alt="De La Salle University"></span>
+          <span class="cv-logo"><img src="assets/logos/dlsu_logo_128.png" width="128" height="128" alt="De La Salle University"></span>
           <div class="cv-body">
             <div class="cv-head"><span class="cv-title">MSc, Civil Engineering</span><span class="cv-when">2017–2020</span></div>
             <div class="cv-org">De La Salle University · Manila, Philippines</div>
@@ -627,7 +655,7 @@
           </div>
         </li>
         <li>
-          <span class="cv-logo"><img src="assets/logos/dlsu_logo.png" alt="De La Salle University"></span>
+          <span class="cv-logo"><img src="assets/logos/dlsu_logo_128.png" width="128" height="128" alt="De La Salle University"></span>
           <div class="cv-body">
             <div class="cv-head"><span class="cv-title">BSc, Civil Engineering</span><span class="cv-when">2009–2014</span></div>
             <div class="cv-org">De La Salle University · Manila, Philippines</div>
@@ -640,7 +668,7 @@
       <h2>Experience</h2>
       <ul class="cv">
         <li>
-          <span class="cv-logo"><img src="assets/logos/dlsu_logo.png" alt="De La Salle University"></span>
+          <span class="cv-logo"><img src="assets/logos/dlsu_logo_128.png" width="128" height="128" alt="De La Salle University"></span>
           <div class="cv-body">
             <div class="cv-head"><span class="cv-title">Assistant Professorial Lecturer</span><span class="cv-when">2021–2023</span></div>
             <div class="cv-org">De La Salle University · Part-time</div>
@@ -648,7 +676,7 @@
           </div>
         </li>
         <li>
-          <span class="cv-logo"><img src="assets/logos/dlsu_logo.png" alt="De La Salle University"></span>
+          <span class="cv-logo"><img src="assets/logos/dlsu_logo_128.png" width="128" height="128" alt="De La Salle University"></span>
           <div class="cv-body">
             <div class="cv-head"><span class="cv-title">Science Research Specialist</span><span class="cv-when">2015–2022</span></div>
             <div class="cv-org">Civil Engineering Department, De La Salle University · Full-time</div>
@@ -685,6 +713,33 @@
     });
   }, { rootMargin: '-15% 0px -70% 0px' });
   map.forEach(function (_, s) { obs.observe(s); });
+})();
+(function () {
+  var btn = document.querySelector('.theme-toggle');
+  if (!btn) return;
+  var root = document.documentElement;
+  var mq = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+  function current() {
+    var t = root.getAttribute('data-theme');
+    if (t === 'light' || t === 'dark') return t;
+    return mq && mq.matches ? 'dark' : 'light';
+  }
+  function sync() {
+    var mode = current();
+    var label = mode === 'dark' ? 'Switch to light theme' : 'Switch to dark theme';
+    btn.setAttribute('data-mode', mode);
+    btn.setAttribute('aria-label', label);
+    btn.title = label;
+  }
+  btn.addEventListener('click', function () {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    sync();
+  });
+  if (mq && mq.addEventListener) mq.addEventListener('change', sync);
+  btn.hidden = false;
+  sync();
 })();
 </script>
 </body>
