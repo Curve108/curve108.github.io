@@ -14,8 +14,12 @@
 <meta property="og:title" content="Kervin Joshua Lucas · Trustworthy AI for Travel Behavior">
 <meta property="og:description" content="PhD candidate at KAIST studying activity-based travel demand models, LLM-powered activity scheduling, and verifier soundness for official travel data.">
 <meta property="og:url" content="https://curve108.github.io/">
-<meta property="og:image" content="https://curve108.github.io/assets/me.jpg">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://curve108.github.io/assets/og_card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Kervin Joshua Lucas, PhD Candidate in Trustworthy AI for Mobility at KAIST">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://curve108.github.io/assets/og_card.jpg">
 <script>try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}</script>
 <script type="application/ld+json">
 {
@@ -187,7 +191,24 @@
   }
   .headline-stats .l { display: block; font-size: 0.82rem; line-height: 1.5; color: var(--muted); margin-top: 0.25rem; }
 
-  /* news */
+  /* news: fixed-height scroll box, newest first */
+  .news-wrap { position: relative; }
+  .news-scroll {
+    max-height: 20rem; overflow-y: auto; padding: 0.3rem 0.8rem 0.3rem 0;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+    scrollbar-width: thin; scrollbar-color: var(--line) transparent;
+  }
+  .news-scroll:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 4px; }
+  .news-scroll::-webkit-scrollbar { width: 6px; }
+  .news-scroll::-webkit-scrollbar-thumb { background: var(--line); border-radius: 3px; }
+  .news-wrap::before, .news-wrap::after {
+    content: ""; position: absolute; left: 0; right: 0.8rem; height: 2.6rem;
+    pointer-events: none; opacity: 0; transition: opacity .2s ease;
+  }
+  .news-wrap::before { top: 1px; background: linear-gradient(var(--paper), transparent); }
+  .news-wrap::after { bottom: 1px; background: linear-gradient(transparent, var(--paper)); }
+  .news-wrap.more-above::before, .news-wrap.more-below::after { opacity: 1; }
+  .news-hint { font-family: var(--mono); font-size: 0.7rem; color: var(--faint); margin: 0.55rem 0 0; }
   .news { margin: 0; padding: 0; list-style: none; }
   .news li { display: flex; gap: 1.2rem; padding: 0.4rem 0; font-size: 0.95rem; }
   .news time {
@@ -256,11 +277,11 @@
   /* figures */
   figure { margin: 1.5rem 0; }
   figure picture { display: block; }
-  figure img { display: block; width: auto; max-width: 100%; max-height: 280px; height: auto; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
+  figure img { --fig-h: 280px; display: block; width: min(100%, calc((var(--fig-h) - 18px) * var(--ar, 1.5) + 18px)); height: auto; margin: 0 auto; background: #fff; border: 1px solid var(--line); border-radius: 10px; padding: 8px; }
   figcaption { font-size: 0.78rem; color: var(--muted); line-height: 1.5; margin-top: 0.5rem; text-align: center; }
   .figrow { display: grid; grid-template-columns: 1fr 1fr; gap: 1.4rem; margin: 1.5rem 0; align-items: end; }
   .figrow figure { margin: 0; }
-  .figrow figure img { max-height: 190px; }
+  .figrow figure img { --fig-h: 190px; }
   .embed { position: relative; padding-top: 56.25%; margin: 1.4rem 0 0; max-width: 38rem; border: 1px solid var(--line); border-radius: 10px; overflow: hidden; background: #000; }
   .embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
   /* cv lists (education / experience) */
@@ -269,6 +290,8 @@
   ul.cv li:last-child { border-bottom: none; }
   .cv-logo { flex: none; width: 42px; height: 42px; border-radius: 9px; background: #fff; border: 1px solid var(--line); display: grid; place-items: center; padding: 5px; }
   .cv-logo img { max-width: 100%; max-height: 100%; height: auto; display: block; }
+  .cv-logo.cv-icon { background: var(--accent-soft); color: var(--accent); border-color: transparent; padding: 9px; }
+  .cv-icon svg { width: 100%; height: 100%; display: block; }
   .cv-body { flex: 1 1 auto; min-width: 0; }
   .kmg-mark { display: inline-flex; align-items: center; background: #fff; border: 1px solid var(--line); border-radius: 8px; padding: 5px 10px; margin: 0 0 1.2rem; }
   .kmg-mark img { height: 20px; width: auto; display: block; }
@@ -321,6 +344,8 @@
     section { margin-bottom: 1.6rem; }
     a { color: inherit; text-decoration: none; }
     details.more { display: none; }
+    .news-scroll { max-height: none; overflow: visible; border: none; padding: 0; }
+    .news-wrap::before, .news-wrap::after, .news-hint { display: none; }
   }
 </style>
 </head>
@@ -364,6 +389,7 @@
       <a href="#research">Research</a>
       <a href="#dissertation">Dissertation</a>
       <a href="#publications">Publications</a>
+      <a href="#honors">Honors</a>
       <a href="#other">Other work</a>
       <a href="#education">Education</a>
       <a href="#experience">Experience</a>
@@ -394,14 +420,14 @@
         <figure>
           <picture>
             <source type="image/webp" srcset="assets/daejeon_temporal_rhythm.webp">
-            <img src="assets/daejeon_temporal_rhythm.png" width="3570" height="1770" loading="lazy" alt="Smooth kernel-density curves of activity start times by trip purpose for Daejeon 2021, with home, work, and school peaks">
+            <img src="assets/daejeon_temporal_rhythm.png" width="3570" height="1770" style="--ar: 3570 / 1770" loading="lazy" alt="Smooth kernel-density curves of activity start times by trip purpose for Daejeon 2021, with home, work, and school peaks">
           </picture>
           <figcaption>When a city travels: activity start times by purpose (Daejeon 2021).</figcaption>
         </figure>
         <figure>
           <picture>
             <source type="image/webp" srcset="assets/daejeon_visum_network.webp">
-            <img src="assets/daejeon_visum_network.png" width="858" height="626" loading="lazy" alt="PTV Visum view of Daejeon's zone system with assigned demand shown as red flow bands over the road network">
+            <img src="assets/daejeon_visum_network.png" width="858" height="626" style="--ar: 858 / 626" loading="lazy" alt="PTV Visum view of Daejeon's zone system with assigned demand shown as red flow bands over the road network">
           </picture>
           <figcaption>Where it travels: Daejeon zones and demand in PTV Visum.</figcaption>
         </figure>
@@ -410,6 +436,8 @@
 
     <section id="news">
       <h2>News</h2>
+      <div class="news-wrap">
+      <div class="news-scroll" tabindex="0" role="region" aria-label="News, newest first">
       <ul class="news">
         <li><time datetime="2026-09">Sep 2026</time><span>Presented Team TUPA's <strong>mid-term research plan</strong> at the KIRD Global R&amp;D Challenge evaluation in Daejeon, after a second expert mentoring review. The plan asks whether one LLM-based activity-scheduling method can forecast travel demand in both Korea and Australia as autonomous vehicles arrive, including trips that older adults, people with disabilities, and non-drivers now forgo.</span></li>
         <li><time datetime="2026-09">Sep 2026</time><span>The two manuscripts on verification soundness for LLM data repair passed the first phase of <strong>double-blind review</strong> and advanced to the second.</span></li>
@@ -421,6 +449,9 @@
         <li><time datetime="2026-06">Jun 2026</time><span>Selected as <strong>principal investigator</strong> of Team TUPA in the Global R&amp;D Challenge of the Korea Institute of Research and Development (KIRD), one of two lab teams funded at a nationwide competition rate of 11:1, for work on evolving LLM-based agent mobility planners for the autonomous-driving era (<a href="https://kaistmobilitygroup.com/2-groups-tupa-global-rd-challenge-grants-2026/">lab news</a>).</span></li>
         <li><time datetime="2026-04">Apr 2026</time><span><strong>Outstanding Paper Award</strong> at the Korea ITS Society 2026 Spring Conference in Jeju, for neurosymbolic repair of structurally inconsistent household travel surveys (<a href="https://kaistmobilitygroup.com/conference-award-2026-spring-its-conference/">lab news</a>).</span></li>
       </ul>
+      </div>
+      </div>
+      <p class="news-hint" hidden>Newest first. Scroll for earlier news.</p>
     </section>
 
     <section id="research">
@@ -429,7 +460,7 @@
       <figure>
         <picture>
           <source type="image/webp" srcset="assets/trilemma_map.webp">
-          <img src="assets/trilemma_map.png" width="1770" height="1192" loading="lazy" alt="Ternary plot mapping AI travel models across interpretability, fidelity, and efficiency, colored by model family">
+          <img src="assets/trilemma_map.png" width="1770" height="1192" style="--ar: 1770 / 1192" loading="lazy" alt="Ternary plot mapping AI travel models across interpretability, fidelity, and efficiency, colored by model family">
         </picture>
         <figcaption>The interpretability, fidelity, and efficiency map: 42 AI-enhanced activity-based models scored on three axes (from the review below). Most cluster toward fidelity.</figcaption>
       </figure>
@@ -571,11 +602,11 @@
       <ul class="pubs">
         <li>
           <div class="pub-t">Smart region mobility framework</div>
-          <div class="pub-m">R.K.C. Billones, M.A. Guillermo, <strong>K.C. Lucas</strong>, M.D. Era, E.P. Dadios, A.M. Fillone · Sustainability 13(11), 6366 · 2021 · <span class="cite">43 citations</span></div>
+          <div class="pub-m">R.K.C. Billones, M.A. Guillermo, <strong>K.C. Lucas</strong>, M.D. Era, E.P. Dadios, A.M. Fillone · Sustainability 13(11), 6366 · 2021 · <span class="cite">43 citations</span> · <a href="https://doi.org/10.3390/su13116366">DOI</a></div>
         </li>
         <li>
           <div class="pub-t">Strategic transit route recommendation considering multi-trip feature desirability using a logit model with optimal travel-time analysis</div>
-          <div class="pub-m">M.A. Guillermo, M.C. Rivera, <strong>K.J.C. Lucas</strong>, R.S. Concepcion II, A.A. Bandala, et al. · Journal of Advanced Computational Intelligence and Intelligent Informatics · 2022 · <span class="cite">7 citations</span></div>
+          <div class="pub-m">M.A. Guillermo, M.C. Rivera, <strong>K.J.C. Lucas</strong>, R.S. Concepcion II, A.A. Bandala, et al. · Journal of Advanced Computational Intelligence and Intelligent Informatics 26(6) · 2022 · <span class="cite">7 citations</span> · <a href="https://doi.org/10.20965/jaciii.2022.p0983">DOI</a></div>
         </li>
       </ul>
 
@@ -603,7 +634,7 @@
       <ul class="pubs">
         <li>
           <div class="pub-t">Transportation Infrastructure Impacts Calculator (TIIC): an infrastructure assessment tool</div>
-          <div class="pub-m">A.E.C. Ruiz, N.R. Roxas Jr, K.I.D.Z. Roquel, K.D.S. Yu, A.M. Fillone, <strong>K.J.C. Lucas</strong> · Transportation Research Procedia 82 · 2025</div>
+          <div class="pub-m">A.E.C. Ruiz, N.R. Roxas Jr, K.I.D.Z. Roquel, K.D.S. Yu, A.M. Fillone, <strong>K.J.C. Lucas</strong> · Transportation Research Procedia 82 · 2025 · <a href="https://doi.org/10.1016/j.trpro.2024.12.020">DOI</a></div>
         </li>
         <li>
           <div class="pub-t">Trip generation in the Philippines: analysis of traditional, geospatial, and AI-based models</div>
@@ -615,7 +646,7 @@
         </li>
         <li>
           <div class="pub-t">What if Metro Manila developed a comprehensive rail transit network?</div>
-          <div class="pub-m">J.R.F. Regidor, D.S. Aloc, A.M. Fillone, <strong>K.J.C. Lucas</strong> · Proceedings of the Eastern Asia Society for Transportation Studies (EASTS), vol. 11 · 2017 · <span class="cite">9 citations</span></div>
+          <div class="pub-m">J.R.F. Regidor, A.M. Fillone, D.S. Aloc, <strong>K.J.C. Lucas</strong> · Proceedings of the Eastern Asia Society for Transportation Studies (EASTS), vol. 11 · 2017 · <span class="cite">9 citations</span> · <a href="https://easts.info/on-line/proceedings/vol.11/pdf/PP1767_H1.pdf">PDF</a></div>
         </li>
       </ul>
 
@@ -628,6 +659,28 @@
         <li>
           <div class="pub-t">GIS for better public transportation and transit</div>
           <div class="pub-m">M.C. Paringit, <strong>K.J. Lucas</strong>, M. Cutora · De La Salle University Research Congress, Manila · 2019 · <span class="cite">1 citation</span></div>
+        </li>
+      </ul>
+    </section>
+
+    <section id="honors">
+      <h2>Honors &amp; grants</h2>
+      <ul class="cv">
+        <li>
+          <span class="cv-logo cv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 20V10M10 20V10M14 20V10M18 20V10"/><path d="M3 10h18L12 4z"/></svg></span>
+          <div class="cv-body">
+            <div class="cv-head"><span class="cv-title">Principal Investigator grant, Global R&amp;D Challenge</span><span class="cv-when">2026</span></div>
+            <div class="cv-org">Korea Institute of Research and Development (KIRD)</div>
+            <div class="cv-note">Team TUPA, one of two lab teams selected at a nationwide competition rate of 11:1.</div>
+          </div>
+        </li>
+        <li>
+          <span class="cv-logo cv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.6 13.4 7 21l5-2.6 5 2.6-1.6-7.6"/></svg></span>
+          <div class="cv-body">
+            <div class="cv-head"><span class="cv-title">Outstanding Paper Award</span><span class="cv-when">2026</span></div>
+            <div class="cv-org">Korea ITS Society 2026 Spring Conference · Jeju</div>
+            <div class="cv-note">For neurosymbolic repair of structurally inconsistent household travel surveys.</div>
+          </div>
         </li>
       </ul>
     </section>
@@ -755,6 +808,22 @@
   if (mq && mq.addEventListener) mq.addEventListener('change', sync);
   btn.hidden = false;
   sync();
+})();
+(function () {
+  var box = document.querySelector('.news-scroll');
+  if (!box) return;
+  var wrap = box.parentNode;
+  var hint = document.querySelector('.news-hint');
+  function update() {
+    var over = box.scrollHeight > box.clientHeight + 2;
+    var atEnd = box.scrollTop + box.clientHeight >= box.scrollHeight - 2;
+    wrap.classList.toggle('more-above', box.scrollTop > 2);
+    wrap.classList.toggle('more-below', over && !atEnd);
+    if (hint) hint.hidden = !over;
+  }
+  box.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  update();
 })();
 </script>
 </body>
