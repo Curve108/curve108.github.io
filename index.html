@@ -413,7 +413,7 @@
       representation behind activity-based travel demand models.</p>
       <ul class="headline-stats">
         <li><span class="n">4 papers</span><span class="l">one connected line of work, from measuring the field's trade-offs to auditing LLM data repair</span></li>
-        <li><span class="n">961 → 42</span><span class="l">studies screened into an evidence-scored map of AI travel models</span></li>
+        <li><span class="n">961 → 42</span><span class="l">studies screened, then scored on the evidence they report about AI travel models</span></li>
         <li><span class="n">16,997</span><span class="l">person-days from the 2022 US National Household Travel Survey in the activity scheduler's input table</span></li>
       </ul>
       <div class="figrow">
@@ -439,6 +439,7 @@
       <div class="news-wrap">
       <div class="news-scroll" tabindex="0" role="region" aria-label="News, newest first">
       <ul class="news">
+        <li><time datetime="2026-10">Oct 2026</time><span>Second revision of our evidence-based review of AI-enhanced activity-based models resubmitted to the <strong>International Journal of Urban Sciences</strong>.</span></li>
         <li><time datetime="2026-10">Oct 2026</time><span>Team TUPA was selected by KIRD as an <strong>outstanding case</strong> of its Overseas Researcher Settlement Support Program, in the "Best Achievements in Science and Technology Talent Development" category. I will present the team's experience at the KIRD 잇다 Festival at the Daejeon Convention Center on 30 November.</span></li>
         <li><time datetime="2026-10">Oct 2026</time><span>Submitted "Risks of Language-Model Completion in Household Travel Surveys" to the <strong>Transportation Research Part A</strong> special issue on generative AI, with Meng Li, Tengfeng Lin, Junyuk Lee, and Inhi Kim.</span></li>
         <li><time datetime="2026-10">Oct 2026</time><span><strong>Best Paper Award</strong> (Scientific Paper category) at the 2026 ITS World Congress in Gangneung, for "Recursive Neurosymbolic Repair of Household Travel Survey Records for Activity-Based Microsimulation" with Junyuk Lee and Inhi Kim. The paper builds on the work recognized at the Korea ITS Society conference in Jeju in April.</span></li>
@@ -462,10 +463,10 @@
 
       <figure>
         <picture>
-          <source type="image/webp" srcset="assets/trilemma_map.webp">
-          <img src="assets/trilemma_map.png" width="1770" height="1192" style="--ar: 1770 / 1192" loading="lazy" alt="Ternary plot mapping AI travel models across interpretability, fidelity, and efficiency, colored by model family">
+          <source type="image/webp" srcset="assets/evidence_scores.webp">
+          <img src="assets/evidence_scores.png" width="1600" height="609" style="--ar: 1600 / 609" loading="lazy" alt="Three dot-plot panels of raw evidence scores from 0 to 10 for interpretability, fidelity, and efficiency, one row per model family, with family means as diamonds and a dashed line at the claim-only efficiency score of 2">
         </picture>
-        <figcaption>The interpretability, fidelity, and efficiency map: 42 AI-enhanced activity-based models scored on three axes (from the review below). Most cluster toward fidelity.</figcaption>
+        <figcaption>Evidence scores of 42 AI-enhanced activity-based models on three criteria, by method family (from the review below). Dots are studies and diamonds family means. Fidelity is documented most consistently, efficiency least.</figcaption>
       </figure>
 
       <article class="pub">
@@ -484,23 +485,25 @@
         </div>
         <div>
           <p class="stage">Foundations</p>
-          <h3>An Evidence-Based Review of AI-Enhanced Activity-Based Models: Trade-offs Between Interpretability, Fidelity, and Efficiency</h3>
+          <h3>An Evidence-Based Review of Interpretability, Fidelity, and Efficiency in AI-Enhanced Activity-Based Models</h3>
           <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
-          <p class="venue">Int. J. of Urban Sciences <span class="status">· second revision in progress</span></p>
-          <p class="tldr"><strong>42 scored studies, one map:</strong> AI travel models pile up on predictive
-          fidelity, while behavioral interpretability and computational efficiency go chronically unmeasured.</p>
+          <p class="venue">Int. J. of Urban Sciences <span class="status">· second revision under review</span></p>
+          <p class="tldr"><strong>42 studies, scored on the evidence they report:</strong> predictive fidelity is documented most
+          consistently and computing cost least; only 14 of the 42 report a measured runtime, hardware, or speed-up.</p>
           <details class="more">
             <summary>Abstract &amp; key numbers</summary>
-            <p>Progress in AI-enhanced activity-based travel models is constrained by an under-articulated
-            three-way trade-off among behavioral interpretability, predictive fidelity, and computational
-            efficiency. From a structured review (961 records screened to 42 core studies), every study is
-            scored on falsifiable indicators and placed on a constant-sum trilemma map (I + F + E = 20), a
-            visualization device whose headline pattern holds under three alternative normalizations. Quality
-            is use-case-dependent: progress reads as movement within target regions, not toward a universal
-            optimum.</p>
+            <p>Activity-based travel models simulate the daily schedules of individual travelers to test transport and land-use
+            policies before they are built. AI now supplies many of their parts, and whether a planning agency can rely on
+            such a model depends on three things: that its schedules are feasible and behaviorally plausible, that its
+            predictions hold on data it was not fitted to, and what its computation costs. Scoring the evidence that 42
+            studies report against a fixed rubric shows that predictive fidelity is the most consistently documented of the
+            three and computing cost the least. Interpretability scores are highest where a study tests the behavioral
+            meaning of its structure or its schedules against an outside check. The scores measure reported evidence, not
+            performance, so a low efficiency score records missing documentation rather than a slow model. The review
+            states, for each planning use, the evidence a study must report.</p>
             <ul class="stats">
               <li><span class="n">961 → 42</span><span class="l">screening funnel to core scored studies</span></li>
-              <li><span class="n">I + F + E = 20</span><span class="l">constant-sum trilemma map; pattern robust to three alternative normalizations</span></li>
+              <li><span class="n">14 of 42</span><span class="l">studies that report a measured runtime, hardware, or speed-up</span></li>
             </ul>
           </details>
         </div>
@@ -570,7 +573,7 @@
           <caption class="sr-only">Dissertation chapters by stage, focus, and status</caption>
           <thead><tr><th scope="col">Ch.</th><th scope="col">Stage</th><th scope="col">Focus</th><th scope="col">Status</th></tr></thead>
           <tbody>
-            <tr><td class="ch">2</td><td>Foundations</td><td>The interpretability, fidelity, and efficiency trade-off in AI travel models</td><td class="st">IJUS, second revision in progress</td></tr>
+            <tr><td class="ch">2</td><td>Foundations</td><td>The interpretability, fidelity, and efficiency trade-off in AI travel models</td><td class="st">IJUS, second revision under review</td></tr>
             <tr><td class="ch">3</td><td>Diagnose</td><td>How unsound verifiers corrupt LLM repair; automated editing of survey travel diaries</td><td class="st">in review; in preparation</td></tr>
             <tr><td class="ch">4</td><td>Construct</td><td>Provably sound verification</td><td class="st">manuscript, in review</td></tr>
             <tr><td class="ch">5</td><td>Apply</td><td>When a check improves an LLM scheduler of a person's day (NHTS 2022)</td><td class="st">in progress, pilot stage</td></tr>
