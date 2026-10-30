@@ -407,12 +407,12 @@
       result carries a <em>verified</em> label it did not earn.</p>
       <p class="lead">The constructive half of the work builds automated checks that flag only what the
       data can actually prove, not artifacts of how it was measured, so repair and generation loops are
-      never asked to fix what the data cannot show is broken. Five connected studies carry this line of work
-      from measurement to policy use. My dissertation asks what a sound check actually changes as the LLM
+      never asked to fix what the data cannot show is broken. Four connected studies carry this line of work
+      from measuring the field to auditing LLM-repaired survey data. My dissertation asks what a sound check actually changes as the LLM
       moves from repairing observed travel diaries to generating daily activity schedules, the core
       representation behind activity-based travel demand models.</p>
       <ul class="headline-stats">
-        <li><span class="n">5 papers</span><span class="l">one connected line of work, from measuring the field's trade-offs to policy use</span></li>
+        <li><span class="n">4 papers</span><span class="l">one connected line of work, from measuring the field's trade-offs to auditing LLM data repair</span></li>
         <li><span class="n">961 → 42</span><span class="l">studies screened into an evidence-scored map of AI travel models</span></li>
         <li><span class="n">16,997</span><span class="l">person-days from the 2022 US National Household Travel Survey in the activity scheduler's input table</span></li>
       </ul>
@@ -439,6 +439,8 @@
       <div class="news-wrap">
       <div class="news-scroll" tabindex="0" role="region" aria-label="News, newest first">
       <ul class="news">
+        <li><time datetime="2026-10">Oct 2026</time><span>Submitted "Risks of Language-Model Completion in Household Travel Surveys" to the <strong>Transportation Research Part A</strong> special issue on generative AI, with Meng Li, Tengfeng Lin, Junyuk Lee, and Inhi Kim.</span></li>
+        <li><time datetime="2026-10">Oct 2026</time><span><strong>Best Paper Award</strong> (Scientific Paper category) at the 2026 ITS World Congress in Gangneung, for "Recursive Neurosymbolic Repair of Household Travel Survey Records for Activity-Based Microsimulation" with Junyuk Lee and Inhi Kim. The paper builds on the work recognized at the Korea ITS Society conference in Jeju in April.</span></li>
         <li><time datetime="2026-09">Sep 2026</time><span>Presented Team TUPA's <strong>mid-term research plan</strong> at the KIRD Global R&amp;D Challenge evaluation in Daejeon, after a second expert mentoring review. The plan asks whether one LLM-based activity-scheduling method can forecast travel demand in both Korea and Australia as autonomous vehicles arrive, including trips that older adults, people with disabilities, and non-drivers now forgo.</span></li>
         <li><time datetime="2026-09">Sep 2026</time><span>The two manuscripts on verification soundness for LLM data repair passed the first phase of <strong>double-blind review</strong> and advanced to the second.</span></li>
         <li><time datetime="2026-09">Sep 2026</time><span>Preparing a manuscript on language-model completion of household travel diaries for the <strong>Transportation Research Part A</strong> special issue on generative AI, with Meng Li, Tengfeng Lin, Junyuk Lee, and Inhi Kim.</span></li>
@@ -542,42 +544,13 @@
         </div>
         <div>
           <p class="stage">Diagnose</p>
-          <h3>Prompt effects, evidence scaffolding and sample distortion in language-model completion of household travel diaries</h3>
+          <h3>Risks of language-model completion in household travel surveys</h3>
           <p class="authors">Kervin Joshua Lucas, Meng Li, Tengfeng Lin, Junyuk Lee, Inhi Kim</p>
-          <p class="venue">Transportation Research Part A: Policy and Practice <span class="status">· special issue on generative AI · in preparation</span></p>
+          <p class="venue">Transportation Research Part A: Policy and Practice <span class="status">· special issue on generative AI · under review</span></p>
           <p class="tldr"><strong>Can a language model fill the gaps in a travel diary?</strong> We hide recorded
           values in real household travel diaries from Greater Melbourne and Daejeon, such as a trip's destination
           area or arrival time, check what the models put back, and ask whether answering only some cases shifts
           what the completed survey says about travel.</p>
-        </div>
-      </article>
-
-      <article class="pub">
-        <div class="thumb" aria-hidden="true">
-          <svg viewBox="0 0 96 96">
-            <rect x="22" y="26" width="36" height="46" rx="2" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>
-            <rect x="28" y="20" width="36" height="46" rx="2" fill="var(--card)" stroke="var(--line)" stroke-width="1.5"/>
-            <line x1="35" y1="31" x2="57" y2="31" stroke="var(--muted)" stroke-width="2" opacity="0.5"/>
-            <line x1="35" y1="38" x2="57" y2="38" stroke="var(--muted)" stroke-width="2" opacity="0.5"/>
-            <line x1="35" y1="45" x2="50" y2="45" stroke="var(--muted)" stroke-width="2" opacity="0.5"/>
-            <path d="M66 48 l12 4.5 v10.5 q0 10.5 -12 15 q-12 -4.5 -12 -15 v-10.5 z" fill="var(--accent-soft)" stroke="var(--accent)" stroke-width="1.8"/>
-            <path d="M61 62 l3.5 3.5 7 -8" fill="none" stroke="var(--accent)" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"/>
-          </svg>
-        </div>
-        <div>
-          <p class="stage">Policy use</p>
-          <h3>Can LLM Activity Schedulers Be Trusted for Transport Policy Counterfactuals?</h3>
-          <p class="authors">Kervin Joshua Lucas, Inhi Kim</p>
-          <p class="venue">Transportation Research Part A: Policy and Practice <span class="status">· special issue on generative AI · planned</span></p>
-          <p class="tldr"><strong>Can a generated schedule carry a policy conclusion?</strong> Whether LLM
-          activity schedulers are trustworthy enough to answer counterfactual policy questions, building on
-          the verifier-soundness line in the work above.</p>
-          <details class="more">
-            <summary>Scope</summary>
-            <p>Extends the verified-LLM thread of the papers above from repairing observed travel records to
-            generating the schedules a policy question would be asked of. Planned for the special issue on
-            generative AI in transport policy and applications, and currently at the scoping stage.</p>
-          </details>
         </div>
       </article>
 
@@ -656,6 +629,10 @@
       <div class="pub-group">International conferences</div>
       <ul class="pubs">
         <li>
+          <div class="pub-t">Recursive neurosymbolic repair of household travel survey records for activity-based microsimulation</div>
+          <div class="pub-m"><strong>K.J. Lucas</strong>, J. Lee, I. Kim · 2026 ITS World Congress, Gangneung · 2026 · <span class="award">Best Paper Award</span></div>
+        </li>
+        <li>
           <div class="pub-t">Recursive neurosymbolic optimization for the semantic repair of structurally inconsistent household travel surveys using LLM</div>
           <div class="pub-m"><strong>K.J. Lucas</strong>, Y. Liu, T. Lin, I. Kim · 15th Asia-Pacific Conference on Transportation and the Environment (APTE 2026), Jeju · 2026 · talk</div>
         </li>
@@ -693,6 +670,14 @@
     <section id="honors">
       <h2>Honors &amp; grants</h2>
       <ul class="cv">
+        <li>
+          <span class="cv-logo cv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="9" r="5.5"/><path d="M8.6 13.4 7 21l5-2.6 5 2.6-1.6-7.6"/></svg></span>
+          <div class="cv-body">
+            <div class="cv-head"><span class="cv-title">Best Paper Award, Scientific Paper category</span><span class="cv-when">2026</span></div>
+            <div class="cv-org">ITS World Congress 2026 · Gangneung</div>
+            <div class="cv-note">For recursive neurosymbolic repair of household travel survey records.</div>
+          </div>
+        </li>
         <li>
           <span class="cv-logo cv-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h16"/><path d="M6 20V10M10 20V10M14 20V10M18 20V10"/><path d="M3 10h18L12 4z"/></svg></span>
           <div class="cv-body">
@@ -783,7 +768,7 @@
 
     <footer class="site">
       © 2026 Kervin Joshua Lucas · Supported in part by MOLIT (Korea) grant RS-2022-00141102.<br>
-      Single static page, no trackers. Updated September 2026.
+      Single static page, no trackers. Updated October 2026.
     </footer>
 
   </main>
