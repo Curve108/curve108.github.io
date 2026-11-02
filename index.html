@@ -408,8 +408,8 @@
       <p class="lead">The constructive half of the work builds automated checks that flag only what the
       data can actually prove, not artifacts of how it was measured, so repair and generation loops are
       never asked to fix what the data cannot show is broken. Four connected studies carry this line of work
-      from measuring the field to auditing LLM-repaired survey data. My dissertation asks what a sound check actually changes as the LLM
-      moves from repairing observed travel diaries to generating daily activity schedules, the core
+      from measuring the field to auditing LLM-repaired survey data. My dissertation carries this work from LLMs that
+      repair observed travel diaries to LLMs that generate daily activity schedules, the core
       representation behind activity-based travel demand models.</p>
       <ul class="headline-stats">
         <li><span class="n">4 papers</span><span class="l">one connected line of work, from measuring the field's trade-offs to auditing LLM data repair</span></li>
@@ -562,12 +562,9 @@
 
     <section id="dissertation">
       <h2>Dissertation</h2>
-      <p class="diss-intro"><strong>Research question</strong> (working direction). When an LLM pipeline
-      that repairs travel data or generates daily activity schedules is gated by an automated check, what
-      does the check's soundness change? The chapters ask what an unsound check destroys, what a sound one
-      can certify, how it shifts the balance of validity, fidelity, coverage, and cost in generated
-      schedules, and where the pipeline breaks when its assumptions change. A bounded or negative answer is
-      an acceptable result.</p>
+      <p class="diss-intro"><strong>Direction</strong> (working). The chapters follow LLMs from repairing
+      observed travel diaries to generating the daily activity schedules behind activity-based travel
+      models. The research question is being refined as the scheduler study begins.</p>
       <div class="chapters">
         <table>
           <caption class="sr-only">Dissertation chapters by stage, focus, and status</caption>
@@ -576,20 +573,17 @@
             <tr><td class="ch">2</td><td>Foundations</td><td>The interpretability, fidelity, and efficiency trade-off in AI travel models</td><td class="st">IJUS, second revision under review</td></tr>
             <tr><td class="ch">3</td><td>Diagnose</td><td>How unsound verifiers corrupt LLM repair; automated editing of survey travel diaries</td><td class="st">in review; in preparation</td></tr>
             <tr><td class="ch">4</td><td>Construct</td><td>Provably sound verification</td><td class="st">manuscript, in review</td></tr>
-            <tr><td class="ch">5</td><td>Apply</td><td>When a check improves an LLM scheduler of a person's day (NHTS 2022)</td><td class="st">in progress, pilot stage</td></tr>
+            <tr><td class="ch">5</td><td>Apply</td><td>An LLM-based activity scheduler built on public travel diaries (NHTS 2022)</td><td class="st">in progress, early stage</td></tr>
             <tr><td class="ch">6</td><td>Stress-test</td><td>Where the pipelines break under changed assumptions, missing inputs, and intervention prompts</td><td class="st">planned</td></tr>
           </tbody>
         </table>
       </div>
       <details class="more">
         <summary>Chapter 5 design</summary>
-        <p>An LLM proposes a full-day activity schedule from survey-style persona attributes, and a checker
-        audits it in a propose, check, and revise loop. The chapter compares a conventional rule checker
-        with a sound checker built on Chapter 4, and sets both against a conditional deep generative model and
-        simple baselines trained on the same public diaries. It measures schedule validity, fidelity to the
-        observed diaries, acceptance coverage, and cost. A certificate states only that the named rules
-        hold; it makes no claim about behavioral fidelity. Data: the 2022 NextGen National Household Travel
-        Survey, 16,997 person-days and 31,074 trips from 7,893 households.</p>
+        <p>An LLM proposes a full-day activity schedule from survey-style person attributes, and a checker
+        built on Chapter 4 enforces basic feasibility rules. The schedules are compared with the observed
+        diaries and with simpler generators trained on the same public data. Data: the 2022 NextGen National
+        Household Travel Survey, 16,997 person-days and 31,074 trips from 7,893 households.</p>
       </details>
     </section>
 
